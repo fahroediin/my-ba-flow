@@ -14,3 +14,7 @@ agent-email-cli
 
 # Project-specific skills
 pmt-tatanan-code-review/
+
+# IDEs and editors
+.vscode/
+

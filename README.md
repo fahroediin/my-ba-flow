@@ -55,4 +55,3 @@ General-purpose skills that assist the pipeline at any stage:
 - `stop-slop`: remove AI writing patterns from prose.
 - `handoff`, `caveman`.
 - `skill-creator`, `write-a-skill`: create and extend skills for the pipeline.
-# my-ba-flow
