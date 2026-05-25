@@ -7,6 +7,8 @@ description: Compile all BA artifacts into a structured handoff package for the 
 
 The final step in the BA pipeline. Compiles all BA artifacts into a single package that engineering can consume, verifies completeness and consistency, and produces the traceability matrix that proves every requirement has a path to delivery.
 
+Aligned with BA Handbook Bab 4.6 (Approval), Bab 4.7 (Handoff), Bab 4.11.3 (Three Amigos), and Rules P5-02, P6-01, P6-03.
+
 Three deliverables: **handoff package, traceability matrix, and sign-off checklist.**
 
 ## Pre-flight check
@@ -32,8 +34,13 @@ Before building the handoff, read every BA artifact that exists under `docs/ba/`
 | Data dictionary | `docs/ba/data-dictionary.md` | Found / Missing |
 | Glossary | `docs/ba/glossary.md` | Found / Missing |
 | Data lineage | `docs/ba/data-lineage.md` | Found / Missing |
+| Assumptions log | `docs/ba/assumptions-log.md` | Found / Missing |
 
 Also check `docs/business/` for any user stories and AC that already exist.
+
+### MRTM pre-flight (Bab 14)
+
+For every story with more than 3 logic branches: verify that an MRTM table exists and every row has a non-empty Expected Result. Stories without MRTM coverage for complex logic are flagged as Not Ready.
 
 Report what is found and what is missing. Not every artifact is required for every project, but flag significant gaps (e.g. no BRD, no process maps) and ask the user whether to proceed or fill them first.
 
@@ -92,9 +99,10 @@ A structured summary document for the engineering team. Not a copy of every arti
 
 ## 8. Recommended Next Steps
 
-1. Engineering reviews this package and the linked artifacts
-2. Stakeholders hold a handoff meeting to walk through the deliverables
-3. Engineering designs the solution architecture and plans sprints
+1. Hold a **Requirement Walkthrough** session (Rule P6-01): BA presents the handoff package to engineering, walking through key decisions, process maps, and complex business rules
+2. For complex stories, conduct a **Three Amigos Sync** (BA + QA + Dev, max 15 minutes per story) to align on MRTM logic and expected behavior (Bab 4.11.3)
+3. Engineering reviews this package and the linked artifacts
+4. Engineering designs the solution architecture and plans sprints
 ```
 
 ## Artifact 2: Traceability Matrix (`traceability-matrix.md`)
@@ -143,6 +151,23 @@ Flag three failure modes:
 | 3 | Open questions that block architecture are escalated | [ ] | |
 | 4 | Data dictionary sufficient for schema design | [ ] | |
 | 5 | Business rules clear enough for implementation | [ ] | |
+
+## Definition of Ready Compliance (Bab 4.7.1)
+
+Every story in the handoff must pass the DoR gate before entering a sprint (Rule P6-03):
+
+| # | DoR Criterion | Status | Notes |
+| --- | --- | --- | --- |
+| 1 | US in standard format with unique ID | [ ] | |
+| 2 | AC complete (Given-When-Then, max 1 THEN per AC) | [ ] | |
+| 3 | MRTM prepared for features with >3 logic branches | [ ] | |
+| 4 | Story Mindmap available for complex features | [ ] | |
+| 5 | Process Model (BPMN / Mermaid) available | [ ] | |
+| 6 | QA validated logic (status: Pass) | [ ] | |
+| 7 | Three Amigos Sync completed (BA + QA + Dev) | [ ] | |
+| 8 | Sample Data Requirements identified | [ ] | |
+| 9 | No open logic gaps (MRTM Expected Results all filled) | [ ] | |
+| 10 | Peer review completed (min. 1 reviewer) | [ ] | |
 ```
 
 ## Output

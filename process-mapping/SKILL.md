@@ -7,7 +7,28 @@ description: Map business processes as AS-IS (current state) and TO-BE (future s
 
 The third step in the BA pipeline. Takes the business requirements and stakeholder context and turns them into visual process flows. The gap between AS-IS and TO-BE is where the project's real value lives; this skill makes that gap explicit and measurable.
 
+Aligned with BA Handbook Bab 4.4 (Analysis), Bab 10.4.1 (BPMN), and Bab 12 (Visual Guide). Process diagrams use Mermaid flowcharts following BPMN-equivalent conventions (see notation guide below).
+
 Three phases: **map the current state, design the future state, then analyze the gap.**
+
+## Mermaid notation guide (BPMN-equivalent)
+
+All process diagrams in this skill use Mermaid flowcharts. To maintain compliance with BA Handbook BPMN standards, every diagram must follow these conventions:
+
+| BPMN Element | Mermaid Syntax | Example |
+| --- | --- | --- |
+| Start Event | `([Start: trigger])` | Stadium-shaped node |
+| End Event | `([End: outcome])` | Stadium-shaped node |
+| Task / Activity | `[Action by Role]` | Rectangle node |
+| XOR Gateway (exclusive) | `{Decision?}` | Rhombus node, one path taken |
+| AND Gateway (parallel) | Use `fork` and `join` labels | Fork into parallel paths, join back |
+| OR Gateway (inclusive) | `{Check conditions}` with multiple Yes edges | One or more paths taken |
+| Pool / Lane (role boundary) | `subgraph RoleName` | Groups steps by actor |
+| Sequence Flow | `-->` | Solid arrow |
+| Message Flow (cross-pool) | `-.->` | Dotted arrow |
+| Data Object | `[(Document name)]` | Cylindrical or note shape |
+
+**Minimum elements per diagram:** every process diagram must include at least: one start event, one end event, decision gateways where the process branches, and swimlanes (`subgraph`) when multiple actors are involved.
 
 ## Phase 1 — AS-IS (Current State)
 
@@ -28,15 +49,15 @@ Interview the user to walk through the current process, one step at a time. For 
 - **Handoffs.** Where does work transfer between roles or departments? These are friction points by nature.
 - **Pain points.** Mark steps that are manual, slow, error-prone, or redundant. Cross-reference the pain-points register.
 
-Produce a Mermaid flowchart for each process:
+Produce a Mermaid flowchart for each process using the notation guide above:
 
 ```mermaid
 flowchart TD
-    A[Start: Trigger event] --> B{Decision?}
-    B -->|Yes| C[Action by Role]
+    A([Start: Trigger event]) --> B{Decision?}
+    B -->|Yes| C[Action by Role A]
     B -->|No| D[Alternative action]
     C --> E[Handoff to Role B]
-    E --> F[End: Outcome]
+    E --> F([End: Outcome])
 ```
 
 Use swimlanes (`subgraph`) to show role boundaries when multiple actors are involved.

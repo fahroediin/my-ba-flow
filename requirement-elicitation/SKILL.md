@@ -9,6 +9,8 @@ The second step in the BA pipeline. Turns stakeholder pain points and organizati
 
 Two phases: **elicit through structured interview, then synthesize the BRD and business rules.**
 
+Aligned with BA Handbook Bab 4.4 (Analysis & Documentation), Bab 5 (Requirements Engineering), and Rules P3-01, P3-04, RE-04.
+
 ## Phase 1 — Elicit
 
 Read existing artifacts first: if `docs/ba/stakeholder-map.md`, `docs/ba/interview-notes.md`, or `docs/ba/pain-points-register.md` exist, load them and use them as context. Do not re-ask questions that are already answered.
@@ -28,11 +30,28 @@ Then interview the user one topic at a time, recommending an answer for each. Co
   - The rule statement
   - Source (regulation, policy, convention)
   - Exception handling: what happens when the rule cannot be met?
-- **Non-functional requirements (business perspective).** Not system NFRs (those belong in technical specs), but business-side expectations: response time from the user's perspective, availability windows, data retention policies, compliance mandates, language/locale needs.
+- **Non-functional requirements (business perspective).** Business-side expectations about system quality. Each NFR must be categorized under one of the **ISO/IEC 25010** characteristics (Rule P3-04):
+  - **Functional Suitability**: completeness, correctness, appropriateness
+  - **Performance Efficiency**: time behaviour, resource utilization, capacity
+  - **Compatibility**: co-existence, interoperability
+  - **Usability**: learnability, operability, accessibility
+  - **Reliability**: maturity, availability, fault tolerance, recoverability
+  - **Security**: confidentiality, integrity, non-repudiation, authentication, authorization
+  - **Maintainability**: modularity, reusability, analysability, modifiability, testability
+  - **Portability**: adaptability, installability, replaceability
+  Every NFR must have a measurable target, not subjective descriptions.
 - **Constraints and assumptions.** Budget limits, timeline, regulatory deadlines, technology mandates from IT, integration requirements with existing systems. Separate hard constraints (non-negotiable) from assumptions (believed true but unverified).
 - **Dependencies.** Other projects, systems, teams, or decisions this initiative depends on. For each, note the dependency type (blocks, informs, shares resources) and current status.
 
 Surface contradictions between stakeholder needs as you go. When two requirements conflict, present both sides and ask the user to resolve or escalate.
+
+### Acceptance Criteria rules
+
+When eliciting or writing acceptance criteria for any requirement:
+
+- **Rule P3-01**: each AC must have exactly **one THEN clause**. If there are multiple outcomes, split into separate ACs.
+- **Rule RE-04**: each AC must include **boundary values** and **edge cases** so QA can derive test cases using Equivalence Partitioning and Boundary Value Analysis without further clarification.
+- **MRTM rule (Bab 14)**: if a feature's logic involves more than **3 input variables or decision branches**, do not write AC as narrative prose. Instead, reference a tabular MRTM (Master Requirement and Test Matrix). Write the AC as: *"Refer to MRTM rows TRM_XXX_001 through TRM_XXX_NNN for comprehensive logic combinations."*
 
 ## Phase 2 — Synthesize
 
@@ -65,12 +84,19 @@ Structure:
 | --- | --- | --- | --- | --- |
 
 ## 5. Non-Functional Requirements (Business)
-| ID | Requirement | Category | Priority | Source |
-| --- | --- | --- | --- | --- |
+| ID | Requirement | Category (ISO 25010) | Priority | Measurement | Source |
+| --- | --- | --- | --- | --- | --- |
 
 ## 6. Constraints and Assumptions
 ### 6.1 Constraints
+| ID | Constraint | Type | Impact | Flexibility |
+| --- | --- | --- | --- | --- |
+| CON-001 | | Budget/Timeline/Resource/Regulatory/Technical | | Fixed/Flexible |
+
 ### 6.2 Assumptions
+| ID | Assumption | Raised By | Date | Status | Risk if Wrong |
+| --- | --- | --- | --- | --- | --- |
+| ASM-001 | | | | Unconfirmed/Confirmed/Invalid | |
 
 ## 7. Dependencies
 | ID | Dependency | Type | Status | Impact if Delayed |
