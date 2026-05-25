@@ -1,70 +1,58 @@
-# Claude Code Skills
+# Claude Code Skills — Business Analyst Pipeline
 
-Personal skill library for Claude Code. The core of this repository is a
-**technical lead pipeline**: a sequence of skills that takes a product idea
-from raw user stories all the way to a reviewed, documented, deployable
-codebase. Each stage is a skill that reads the artifacts produced by the
-previous stage and writes the next one, so the project documentation stays
-consistent and every decision is traceable back to an acceptance criterion.
+Personal skill library for Claude Code. This repository contains a **business
+analyst pipeline** that takes a raw business need from stakeholder interviews all
+the way to a structured handoff package ready for engineering consumption. Each
+stage is a skill that reads the artifacts produced by the previous stage and
+writes the next one, so the project documentation stays consistent and every
+decision is traceable from business objective to final handoff deliverable.
 
-## The technical lead pipeline
+## The business analyst pipeline
 
-The pipeline runs in order. Steps 1 and 3 are manual (the human supplies or
-edits the source material); every other step is a skill invoked with `/<name>`.
-Step 0 is optional, for projects that start from an idea rather than a written
-spec.
+The BA pipeline takes a raw project idea or business need and produces the
+structured requirements, process maps, and specifications that an engineering
+team can consume. All BA artifacts live in `docs/ba/`.
 
 | Step | Stage | Skill | Produces |
 | ---- | ----- | ----- | -------- |
-| 0 | Discover (optional) | `product-discovery` | The step-1 requirements table, elicited by interview, when no user stories or AC exist yet |
-| 1 | Capture requirements | (manual or step 0) | A Markdown table of user stories, acceptance criteria, and a sprint breakdown |
-| 2 | Groom | `grooming` | Technical questions for the BA/PO, an INVEST readiness verdict, and concrete add/remove/edit suggestions for the US and AC |
-| 3 | Refine | (manual) | Edits to the US and AC based on grooming output |
-| 4 | Format | `us-ac-formatter` | `docs/business/`: `user-story.md`, `sprint-breakdown.md`, and per-sprint Gherkin acceptance criteria |
-| 5 | Specify | `technical-spec` | `docs/technical-specs/`: numbered `NN-topic.md` files plus `_index.md`, including ad-hoc trailing specs. Grills on tech stack and tooling first |
-| 6 | Plan work | `task-breakdown` | `docs/TASK_BREAKDOWN.md`: sprint-by-sprint, role-assigned cards, with frontend/backend wiring as its own owned card |
-| 7 | Set up project | `tech-lead-setups` | The Sprint 0 scaffold: folder structure, architectural patterns, commit hooks, tooling config, and endpoint/page stubs returning mock responses. Grills first, then executes |
-| 8 | Set standards | `coding-standard` | `CODING_STANDARD.md` and `CODE_REVIEW_CHECKLIST.md` |
-| 9 | Init GitHub project | `github-project-init` | Issues from every task card (assigned, labelled, milestoned, in the board Backlog), the Projects v2 Kanban board, `dev`/`test`/`main` branches with protection, issue and PR templates, CI quality and build workflows, dependabot, and a release template |
-| 10 | Plan deployment | `deployment-plan` | `DEPLOYMENT_PLAN.md`: an operational runbook. Grills on infrastructure first |
-| 11 | Orient newcomers | `project-docs` | `README.md`, `GLOSSARY.md`, `DEVELOPMENT_SCENARIO_GUIDE.md`, `ONBOARDING_GUIDE.md` |
-| 12 | Document failures | `troubleshooting` | `TROUBLESHOOTING.md`: symptom-indexed guide, scaffolded from the architecture seams |
-| 13 | Init agent manual | `init-claude` | `CLAUDE.md`: a dense agent operating manual distilled from the specs, standard, task breakdown, and deployment plan |
-| 14 | Build | (manual + skills below) | The implementation |
-| 15 | Review | `code-review` | A structured PR review against the standards, run in an isolated git worktree |
+| BA-0 | Discover (optional) | `product-discovery` | The step-1 requirements table, elicited by interview, when no user stories or AC exist yet |
+| BA-1 | Stakeholder interview | `stakeholder-interview` | `docs/ba/stakeholder-map.md`, `interview-notes.md`, `pain-points-register.md` |
+| BA-2 | Requirement elicitation | `requirement-elicitation` | `docs/ba/brd.md`, `business-rules.md` |
+| BA-3 | Process mapping | `process-mapping` | `docs/ba/process-map-as-is.md`, `process-map-to-be.md`, `gap-analysis.md` |
+| BA-4 | Impact analysis | `impact-analysis` | `docs/ba/impact-assessment.md`, `risk-register.md`, `change-readiness.md` |
+| BA-5 | BA grooming | `ba-grooming` | Business-perspective review of user stories: value clarity, persona accuracy, testability by business users |
+| BA-6 | Wireframe spec | `wireframe-spec` | `docs/ba/screen-inventory.md`, `navigation-flow.md`, `field-specs/*.md` |
+| BA-7 | Data dictionary | `data-dictionary` | `docs/ba/data-dictionary.md`, `glossary.md`, `data-lineage.md` |
+| BA-8 | BA handoff | `ba-handoff` | `docs/ba/handoff-package.md`, `traceability-matrix.md`, `sign-off-checklist.md` |
 
-### How the stages connect
+### How the BA stages connect
 
-- `product-discovery` (step 0) is the on-ramp when no requirements exist yet: it
-  interviews and emits the step-1 table, then hands off to `grooming`.
-- `grooming`, `us-ac-formatter`, and `technical-spec` all treat `docs/business/`
-  as the product source of truth.
-- `technical-spec` is the architectural keystone: the tech stack, data model,
-  and module boundaries it fixes are what `task-breakdown`, `tech-lead-setups`,
-  `coding-standard`, and `deployment-plan` build on.
-- `tech-lead-setups` reads the technical specs to build the scaffold that
-  `coding-standard` then describes and `code-review` enforces.
-- `coding-standard` writes the two documents that `code-review` consumes as its
-  source of truth.
-- `github-project-init` turns `task-breakdown`'s cards into GitHub issues on a
-  board, and its CI quality gate and PR template reference the coding standard.
-- `deployment-plan` writes the runbook that `troubleshooting` references rather
-  than duplicates.
-- `init-claude` runs last, distilling the specs, standard, task breakdown, and
-  deployment plan into the `CLAUDE.md` an agent reads before building.
-- Every doc cross-links its siblings instead of restating their content, so
-  facts live in exactly one place.
+- `product-discovery` (BA-0) is the optional on-ramp when no requirements exist
+  yet: it interviews stakeholders and emits a requirements table that
+  `stakeholder-interview` and `requirement-elicitation` can build on.
+- `stakeholder-interview` (BA-1) is the primary entry point: it maps the
+  stakeholder landscape and surfaces pain points that `requirement-elicitation`
+  formalizes.
+- `requirement-elicitation` (BA-2) produces the BRD that drives everything
+  downstream: process maps, impact analysis, screen specs, and data dictionary
+  all trace back to business requirements.
+- `process-mapping` (BA-3) and `impact-analysis` (BA-4) can run in parallel
+  after the BRD exists. Process maps show what changes; impact analysis shows
+  what the change costs.
+- `ba-grooming` (BA-5) reviews user stories from the business perspective,
+  ensuring value clarity and testability before handoff.
+- `wireframe-spec` (BA-6) and `data-dictionary` (BA-7) can run in parallel.
+  Screen specs define the UI contract; the data dictionary defines the data
+  contract.
+- `ba-handoff` (BA-8) compiles everything into a package the engineering team
+  can consume, with a traceability matrix proving coverage.
 
 ## Supporting skills
 
 General-purpose skills that assist the pipeline at any stage:
 
-- `grill-me`, `grill-with-docs`: stress-test a plan or design before building.
-- `diagnose`: disciplined debugging loop. Feeds confirmed incidents back into
-  `troubleshooting`.
-- `tdd`: red-green-refactor build loop.
-- `to-prd`, `to-issues`, `triage`: convert context into tracked work.
-- `improve-codebase-architecture`, `zoom-out`, `prototype`, `simplify`.
-- `git-commit`, `setup-pre-commit`, `git-guardrails-claude-code`.
+- `grill-me`, `grill-with-docs`: stress-test a plan or design before finalizing.
 - `stop-slop`: remove AI writing patterns from prose.
-- `handoff`, `caveman`, `skill-creator`, `write-a-skill`.
+- `handoff`, `caveman`.
+- `skill-creator`, `write-a-skill`: create and extend skills for the pipeline.
+# my-ba-flow
