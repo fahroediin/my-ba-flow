@@ -1,6 +1,6 @@
 ---
 name: product-discovery
-description: Optional pre-pipeline skill for when there are no user stories or acceptance criteria yet. Interviews the user about a raw product idea, then synthesizes the result into the Markdown table of user stories, acceptance criteria, and a sprint breakdown that the rest of the tech-lead pipeline (grooming, us-ac-formatter) consumes as its step-1 input. Use when the user has an idea but no written requirements, wants to start a project from scratch, says "I don't have user stories yet", "help me figure out the requirements", "turn this idea into stories", or asks where to begin.
+description: Optional pre-pipeline skill for when there are no user stories or acceptance criteria yet. Interviews the user about a raw product idea, then synthesizes the result into the Markdown table of user stories, acceptance criteria, and a sprint breakdown that the rest of the BA pipeline (requirement-elicitation, ba-grooming) consumes as its step-1 input. Use when the user has an idea but no written requirements, wants to start a project from scratch, says "I don't have user stories yet", "help me figure out the requirements", "turn this idea into stories", or asks where to begin.
 ---
 
 # Product Discovery
@@ -53,13 +53,13 @@ Rules for the synthesis:
 
 ## Output and handoff
 
-Present the table for the user to review and edit directly; this is a first draft, not a final spec. Offer to save it to a scratch file (e.g. `docs/business/REQUIREMENTS-DRAFT.md`) if they want to edit in place. Do not write the final `docs/business/` files here; that is `us-ac-formatter`'s job.
+Present the table for the user to review and edit directly; this is a first draft, not a final spec. Offer to save it to a scratch file (e.g. `docs/business/REQUIREMENTS-DRAFT.md`) if they want to edit in place. Do not write the final requirement documents here; that is `requirement-elicitation`'s job.
 
-When the user is happy with the draft, point them at the next step: `grooming` to stress-test it, then `us-ac-formatter` to format it into the structured `docs/business/` set. If the user works from an issue tracker instead of the file pipeline, note that `to-prd` and `to-issues` are the tracker-based alternatives.
+When the user is happy with the draft, point them at the next step: `stakeholder-interview` and `requirement-elicitation` to formalize these into a BRD and business rules, then `ba-grooming` to validate the stories against those requirements before handoff.
 
 ## Writing conventions (enforced in all output)
 
 - No AI slop: no filler or hedging; every sentence informs. Use the `stop-slop` skill on prose when unsure.
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.

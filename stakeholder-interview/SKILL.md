@@ -5,7 +5,7 @@ description: Conduct a structured stakeholder interview for a project or initiat
 
 # Stakeholder Interview
 
-The entry point of the BA pipeline. Before gathering requirements, a BA must understand *who* cares, *how much* they care, and *what* they need. This skill interviews the user (acting as the domain expert or project sponsor) to build a complete picture of the stakeholder landscape.
+The stakeholder-mapping step of Phase 1, run after `ba-planning` has produced the approved BA Work Plan (Rule P1-01). Before gathering requirements, a BA must understand *who* cares, *how much* they care, and *what* they need. This skill interviews the user (acting as the domain expert or project sponsor) to build a complete picture of the stakeholder landscape.
 
 Aligned with BA Handbook Bab 4.2 (Planning & Scoping), Bab 6 (Stakeholder Management), and Rules P1-02, P2-01, P2-03.
 
@@ -31,7 +31,7 @@ Cover, adapting to the project:
   - **Power**: their ability to influence the project's direction or outcome (High/Medium/Low)
   - **Interest**: how much the project affects their daily work or goals (High/Medium/Low)
   - **Attitude**: Supportive, Neutral, or Resistant to the change
-  - **Engagement level**: Unaware, Resistant, Neutral, Supportive, or Committed (per Handbook Bab 6.4.2). Note the *current* level and the *desired* level; the gap drives the engagement strategy.
+  - **Engagement level**: Unaware, Resistant, Neutral, Supportive, or Leading (per Handbook Bab 6.4.2). Note the *current* level and the *desired* level; the gap drives the engagement strategy.
 - **Communication needs.** For key stakeholders: preferred communication channel, frequency (Daily/Weekly/Bi-weekly/Monthly), and level of detail (executive summary vs. working-level detail).
 - **Pain points.** What frustrates each stakeholder group today? What do they complain about? What workarounds do they use? These become requirement candidates later.
 - **Success criteria.** How will each stakeholder group judge whether the project succeeded? Pin concrete, observable measures where possible.
@@ -40,7 +40,7 @@ Cover, adapting to the project:
 
 Surface contradictions and coverage gaps as you go. When the picture is complete, summarize it back and confirm before writing.
 
-Note on timing (Rule P2-01): if this skill is used during a live interview session, the resulting artifacts serve as the structured meeting minutes and must be finalized within 24 hours of the session.
+Note on timing (Rule P2-01): if this skill is used during a live interview session, the resulting artifacts serve as the structured meeting minutes and must be finalized within 24 hours of the session. Per Rule P2-02, those minutes must then be confirmed (signed or approved) by the session participants as verification of accuracy before they are treated as final.
 
 ## Phase 2 — Synthesize the artifacts
 
@@ -105,4 +105,4 @@ Present the artifacts for the user to review and edit. Offer to save them to `do
 - No AI slop: no filler or hedging; every sentence informs.
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.

@@ -1,11 +1,11 @@
 ---
 name: data-dictionary
-description: Create a business data dictionary defining every entity, attribute, and relationship from the business perspective, plus a domain glossary and data lineage map. Not a technical data model (that belongs in technical-spec), but the business-level definitions that feed into it. Use when the user wants to define business data, create a glossary, document data meanings, says "what data do we have", "define the entities", "build a data dictionary", "what does this field mean", or needs to establish a shared vocabulary before engineering designs the database.
+description: Create a business data dictionary defining every entity, attribute, and relationship from the business perspective, plus a domain glossary and data lineage map. Not a technical data model (that belongs in the Engineering spec / T-App-Eng), but the business-level definitions that feed into it. Use when the user wants to define business data, create a glossary, document data meanings, says "what data do we have", "define the entities", "build a data dictionary", "what does this field mean", or needs to establish a shared vocabulary before engineering designs the database.
 ---
 
 # Data Dictionary
 
-The seventh step in the BA pipeline. Establishes the single source of truth for what the business's data means, who owns it, and where it flows. The technical `technical-spec` skill later translates this into a database schema, but the business definitions live here and take precedence when the two conflict.
+The seventh step in the BA pipeline. Establishes the single source of truth for what the business's data means, who owns it, and where it flows. The Engineering team later translates this into a database schema (via the Engineer spreadsheet T-App-Eng and FSD Bab 9), but the business definitions live here and take precedence when the two conflict.
 
 Two phases: **elicit the data landscape, then synthesize the dictionary and glossary.**
 
@@ -98,7 +98,7 @@ An alphabetical glossary of every business term used in the project. Each entry:
 | (term) | (definition) | (other names used) | (where this term appears) | (related terms) |
 ```
 
-Include non-English terms with their English equivalent if the project is multilingual. This glossary feeds directly into `GLOSSARY.md` in the Tech Lead pipeline.
+Include non-English terms with their English equivalent if the project is multilingual. This glossary feeds directly into the FSD glossary (Bab 8, FSD Section 20) and establishes the ubiquitous language for the product.
 
 ### Artifact 3: Data Lineage Map (`data-lineage.md`)
 
@@ -133,8 +133,8 @@ Below the diagram, a lineage table:
 
 When the user is satisfied, point them at:
 - `ba-handoff` to compile the complete BA package
-- The Tech Lead pipeline's `technical-spec` skill will consume this dictionary when designing the database schema
-- `GLOSSARY.md` (from `project-docs`) should mirror or extend this glossary
+- Engineering will consume this dictionary when designing the database schema (Engineer spreadsheet T-App-Eng)
+- The FSD Data Dictionary section (Bab 8, FSD Section 9.2) should mirror this dictionary
 
 ## Writing conventions (enforced in all output)
 
@@ -142,4 +142,4 @@ When the user is satisfied, point them at:
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
 - Preserve domain terms and non-English labels verbatim. Mirror both the business name and the localized UI label where they differ.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.

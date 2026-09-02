@@ -7,7 +7,7 @@ description: Map business processes as AS-IS (current state) and TO-BE (future s
 
 The third step in the BA pipeline. Takes the business requirements and stakeholder context and turns them into visual process flows. The gap between AS-IS and TO-BE is where the project's real value lives; this skill makes that gap explicit and measurable.
 
-Aligned with BA Handbook Bab 4.4 (Analysis), Bab 10.4.1 (BPMN), and Bab 12 (Visual Guide). Process diagrams use Mermaid flowcharts following BPMN-equivalent conventions (see notation guide below).
+Aligned with BA Handbook Bab 4.4 (Analysis), Bab 10.4.1 (BPMN), and Bab 12 (Visual Guide). The three outputs together form the **Process Model** deliverable (template T-10, Bab 8). Process diagrams use Mermaid flowcharts following BPMN-equivalent conventions (see notation guide below).
 
 Three phases: **map the current state, design the future state, then analyze the gap.**
 
@@ -142,4 +142,4 @@ When the user is satisfied, point them at:
 - No AI slop: no filler or hedging; every sentence informs.
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.

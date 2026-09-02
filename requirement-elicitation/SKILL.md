@@ -11,6 +11,8 @@ Two phases: **elicit through structured interview, then synthesize the BRD and b
 
 Aligned with BA Handbook Bab 4.4 (Analysis & Documentation), Bab 5 (Requirements Engineering), and Rules P3-01, P3-04, RE-04.
 
+Classify every requirement by its **ISO/IEC 29148 level** (Bab 5.2.1) and tag it accordingly: **Business Requirement** (organizational, lives in the BRD), **Stakeholder Requirement** (from a stakeholder's perspective), **Solution Requirement** (Functional and Non-Functional, the spec of what is built), and **Transition Requirement** (data migration and cutover needs). Tagging the level lets the RTM trace Business Need to Solution Requirement to Test Case bidirectionally (Bab 5.4).
+
 ## Phase 1 — Elicit
 
 Read existing artifacts first: if `docs/ba/stakeholder-map.md`, `docs/ba/interview-notes.md`, or `docs/ba/pain-points-register.md` exist, load them and use them as context. Do not re-ask questions that are already answered.
@@ -57,7 +59,7 @@ When eliciting or writing acceptance criteria for any requirement:
 
 ### Artifact 1: Business Requirements Document (`brd.md`)
 
-Structure:
+Follow the BA Handbook BRD template **T-07** (Bab 8). Where a section's detail lives in a sibling artifact (process maps, gap analysis, data dictionary, risk register), summarize it here and link to the source rather than duplicating it. The document is business-centric (the *why*); the FSD (T-FSD) later covers the *what the system must do*.
 
 ```markdown
 # Business Requirements Document
@@ -67,48 +69,86 @@ Structure:
 **Author:** (BA name)  
 **Status:** Draft  
 
-## 1. Executive Summary
+## Revision History
+| Version | Date | Author | Change Summary | AI-Assisted |
+| --- | --- | --- | --- | --- |
+| 1.0 | (date) | (name) | Initial draft | Yes/No |
+
+## 1. Purpose & Background
+### 1.1 Business Purpose
+### 1.2 Background & Context
+
+## 2. Executive Summary
 (one paragraph: the problem, the proposed solution, the expected outcome)
 
-## 2. Business Objectives
+## 3. Business Objectives
 | ID | Objective | Measure | Target | Stakeholder |
 | --- | --- | --- | --- | --- |
 
-## 3. Scope
-### 3.1 In Scope
-### 3.2 Out of Scope
+## 4. Scope
+### 4.1 In Scope
+### 4.2 Out of Scope
 
-## 4. Functional Requirements
-### 4.1 (Functional Area)
-| ID | Requirement | Priority | Source | Acceptance Measure |
+## 5. Stakeholders
+(summary from `docs/ba/stakeholder-map.md`; link to the full register)
+
+## 6. Current State (As-Is)
+(summary and link to `docs/ba/process-map-as-is.md`)
+
+## 7. Future State (To-Be)
+(summary and link to `docs/ba/process-map-to-be.md`)
+
+## 8. Gap Analysis
+(summary and link to `docs/ba/gap-analysis.md`)
+
+## 9. Solution Alternatives
+| Option | Description | Pros | Cons | Recommendation |
 | --- | --- | --- | --- | --- |
 
-## 5. Non-Functional Requirements (Business)
+## 10. Business Requirements
+### 10.1 (Functional Area)
+| ID | Requirement | Level (ISO 29148) | Priority (MoSCoW) | Source | Acceptance Measure |
+| --- | --- | --- | --- | --- | --- |
+| BR-01 | The system shall ... | Business/Stakeholder/Solution | Must/Should/Could/Won't | SH-XX | (measure) |
+
+## 11. Business Rules
+(summary; full catalog in `docs/ba/business-rules.md`)
+
+## 12. Non-Functional Requirements (Business)
 | ID | Requirement | Category (ISO 25010) | Priority | Measurement | Source |
 | --- | --- | --- | --- | --- | --- |
 
-## 6. Constraints and Assumptions
-### 6.1 Constraints
+## 13. Data Requirements
+(summary and link to `docs/ba/data-dictionary.md`)
+
+## 14. Assumptions and Constraints
+### 14.1 Assumptions
+| ID | Assumption | Raised By | Date | Status | Risk if Wrong |
+| --- | --- | --- | --- | --- | --- |
+| ASM-001 | | | | Unconfirmed/Confirmed/Invalid | |
+### 14.2 Constraints
 | ID | Constraint | Type | Impact | Flexibility |
 | --- | --- | --- | --- | --- |
 | CON-001 | | Budget/Timeline/Resource/Regulatory/Technical | | Fixed/Flexible |
 
-### 6.2 Assumptions
-| ID | Assumption | Raised By | Date | Status | Risk if Wrong |
-| --- | --- | --- | --- | --- | --- |
-| ASM-001 | | | | Unconfirmed/Confirmed/Invalid | |
-
-## 7. Dependencies
+## 15. Dependencies
 | ID | Dependency | Type | Status | Impact if Delayed |
 | --- | --- | --- | --- | --- |
 
-## 8. Risks
-| ID | Risk | Probability | Impact | Mitigation |
-| --- | --- | --- | --- | --- |
+## 16. Risks
+(top risks; full register in `docs/ba/risk-register.md`)
 
-## 9. Approval
+## 17. Glossary
+(key terms; full glossary in `docs/ba/glossary.md`)
+
+## 18. References
+(standards, source documents, related artifacts)
+
+## 19. Approval
 | Role | Name | Date | Signature |
 | --- | --- | --- | --- |
+
+*Approval authority (Bab 4.6): reviewed by BA Lead, approved by Business Stakeholder + Sponsor. Once approved the BRD is Baselined (Rule P5-01); later changes require a Change Request (`change-request`, Rule P7-01).*
 ```
 
 ### Artifact 2: Business Rules Catalog (`business-rules.md`)
@@ -135,4 +175,4 @@ Present both artifacts for review. Offer to save them to `docs/ba/`. When the us
 - No AI slop: no filler or hedging; every sentence informs.
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.

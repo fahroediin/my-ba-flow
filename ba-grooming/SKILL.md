@@ -7,7 +7,7 @@ description: Review user stories and acceptance criteria from the Business Analy
 
 The fifth step in the BA pipeline. This skill reviews stories from the **business perspective**: does the story deliver clear value, is the persona right, can a business user validate the acceptance criteria, and do the stories trace back to documented requirements?
 
-Aligned with BA Handbook Bab 4.5 (Design & Validation), Bab 4.7.1 (DoR), Bab 5.3.5 (AC Testability), Bab 14 (MRTM), and Rules P3-01, RE-04, P6-03.
+Aligned with BA Handbook Bab 4.5 (Design & Validation), Bab 4.7.1 (DoR), Bab 5.3.4 (AC Testability), Bab 14 (MRTM), and Rules P3-01, P4-01, RE-04, P6-03.
 
 This skill asks "should we build this, and will the business know it's done?"
 
@@ -42,7 +42,7 @@ For each user story, evaluate against these criteria:
 - Are boundary values stated in business terms? ("maximum 50 items per order" not "array length <= 50")
 - Is the AC testable with a manual walkthrough by a business user during UAT?
 
-#### AC Testability (Rule RE-04, Bab 5.3.5)
+#### AC Testability (Rule RE-04, Bab 5.3.4)
 
 - Does each AC include explicit **boundary values** (minimum, maximum) so QA can apply Boundary Value Analysis?
 - Are **valid and invalid input ranges** clearly defined so QA can apply Equivalence Partitioning?
@@ -66,6 +66,24 @@ For each user story, evaluate against these criteria:
 - Does the story's workflow match the TO-BE process map?
 - Are there steps in the process map that no story covers?
 - Does the story skip steps or combine steps that the process map separates?
+
+### Requirements Validation (Bab 4.5)
+
+Beyond the business-value lens, run each requirement and story through the BA Handbook Phase 4 validation checklist (Bab 4.5). This is the formal validation gate before stakeholder sign-off. Mark each criterion PASS / FAIL:
+
+- [ ] **Complete** — no missing information
+- [ ] **Consistent** — no conflict with another requirement
+- [ ] **Correct** — accurately reflects the stakeholder need
+- [ ] **Feasible** — technically implementable
+- [ ] **Modifiable** — can change without excessive impact
+- [ ] **Unambiguous** — exactly one interpretation
+- [ ] **Testable** — verifiable through testing
+- [ ] **Traceable** — traces to a business need
+- [ ] **Verifiable** — implementation can be proven
+
+**Rule P4-01:** every requirements document must pass at least one peer review by another BA before it is presented to stakeholders. Record the reviewer and date. **Rule P4-02:** requirements not yet validated by the stakeholder must not be treated as "approved" or handed off to development.
+
+Record the validation and peer-review results as a **Review Checklist (T-15)** at `docs/ba/review-checklist.md` so Phase 4 has its mandated deliverable.
 
 ### Output Structure
 
@@ -111,7 +129,7 @@ For each story, run through the **Definition of Ready** checklist from the BA Ha
 
 Stories that do not pass all DoR criteria must not enter a sprint (Rule P6-03).
 
-#### 3. Suggestions
+#### 4. Suggestions
 
 Three change types to structure the feedback:
 
@@ -136,4 +154,4 @@ When the user is satisfied with the review:
 - No AI slop: no filler or hedging; every sentence informs.
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.

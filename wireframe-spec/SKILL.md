@@ -9,6 +9,8 @@ The sixth step in the BA pipeline. Translates business requirements and process 
 
 Three deliverables: **screen inventory, navigation flow, and field-level specifications.**
 
+These three outputs populate **FSD Section 8 (User Interface Specification)** in the Functional Specification Document (T-FSD, Bab 8); when a full FSD is assembled, they are its UI spec.
+
 ## Input
 
 Read existing artifacts: `docs/ba/brd.md`, `docs/ba/process-map-to-be.md`, `docs/ba/stakeholder-map.md`, and `docs/business/user-story.md` if they exist. The TO-BE process map is the primary driver: each human-facing step in the process implies a screen or a screen state.
@@ -132,4 +134,4 @@ When the user is satisfied, point them at:
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
 - Preserve the user's domain terms and any non-English labels verbatim. If the UI will be in Bahasa Indonesia, field labels are in Bahasa Indonesia.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.

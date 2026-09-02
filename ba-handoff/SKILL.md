@@ -109,12 +109,14 @@ A structured summary document for the engineering team. Not a copy of every arti
 
 The proof that every business requirement has a path to delivery, and every deliverable traces back to a requirement.
 
-```markdown
-# Requirements Traceability Matrix
+Follow the BA Handbook RTM template **T-13** and the bidirectional model in Bab 5.4.2: every Business Need traces down to a Test Case, and every deliverable traces back up to a Business Need. Carry the ISO 29148 requirement levels (Business Need, Stakeholder Requirement, Functional Requirement, NFR) so no level is skipped.
 
-| BR ID | Requirement | US ID | User Story | AC IDs | Screen(s) | Process Step | Test Approach | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| BR-01 | (requirement text) | US-01 | (story text) | AC-01.01, AC-01.02 | SCR-01, SCR-02 | TO-BE step 3 | (UAT scenario) | Mapped / Partial / Unmapped |
+```markdown
+# Requirements Traceability Matrix (T-13)
+
+| Business Need | BR ID | Stakeholder Req | Functional Req / US | NFR ID | AC IDs | Screen(s) | Process Step | Test Case ID | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| BN-01 | BR-01 | SR-01 | FR-01 / US-01 | NFR-01 | AC-01.01, AC-01.02 | SCR-01 | TO-BE step 3 | TC-01, TRM_XXX_001 | Mapped / Partial / Unmapped |
 ```
 
 Flag three failure modes:
@@ -151,6 +153,19 @@ Flag three failure modes:
 | 3 | Open questions that block architecture are escalated | [ ] | |
 | 4 | Data dictionary sufficient for schema design | [ ] | |
 | 5 | Business rules clear enough for implementation | [ ] | |
+
+## Approval Authority (Bab 4.6)
+
+Map each deliverable to its required reviewer and approver. Sign-off must be written evidence (Rule P5-02); verbal approval is not valid.
+
+| Document Type | Reviewer | Approver |
+| --- | --- | --- |
+| User Stories + AC | BA Lead / Sr BA | Product Owner |
+| Business Requirements Document (BRD) | BA Lead | Business Stakeholder + Sponsor |
+| Functional Specification Document (FSD) | BA Lead + Dev Lead | Product Owner + Dev Lead |
+| Process Model (BPMN / Mermaid) | BA Lead | Process Owner |
+| Non-Functional Requirements | BA Lead + Architect | Architect + Tech Lead |
+| Change Request | BA Lead | Change Advisory Board (CAB) |
 
 ## Definition of Ready Compliance (Bab 4.7.1)
 
@@ -196,4 +211,4 @@ If the user has not yet created `docs/business/` artifacts (user stories, AC), o
 - No AI slop: no filler or hedging; every sentence informs.
 - No em-dashes, no double-dashes (`--`) in prose; dashes only as Markdown syntax (list bullets, table rules) or in literal code/CLI flags (e.g. `--no-deps`).
 - No emoji. Professional, declarative tone.
-- If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
+- - If a document carries a metadata header (`**Version:**`, `**Date:**`, `**Author:**`, `**Status:**`, `**Phase:**`), each such line ends with two trailing spaces so Markdown renders them on separate lines.
