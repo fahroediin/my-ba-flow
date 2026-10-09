@@ -18,3 +18,7 @@ pmt-tatanan-code-review/
 # IDEs and editors
 .vscode/
 
+
+# Python
+__pycache__/
+.pytest_cache/
