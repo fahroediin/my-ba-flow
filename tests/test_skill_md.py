@@ -37,3 +37,9 @@ def test_no_emoji_and_no_em_dash():
     text = body()
     assert EMOJI.findall(text) == []
     assert '—' not in text
+
+
+def test_mrtm_story_rules_and_paste_only_new_rows():
+    text = body()
+    assert 'category coverage' in text and 'MRTM rows' in text
+    assert 'paste only the new rows' in text

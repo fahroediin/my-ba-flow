@@ -136,3 +136,60 @@ def test_main_reports_error_and_exit_code(tmp_path, capsys):
     assert T.main([str(src)]) == 1
     assert 'baris' in capsys.readouterr().err
     assert not (tmp_path / 'ac.tsv').exists()
+
+
+@pytest.mark.parametrize('heading', ['### Acceptance Criteria (US-06)', '### Acceptance Criteria', '### Acceptance Criteria US-07'])
+def test_ac_table_under_wrong_heading_fails(heading):
+    bad = DOC.replace('### Acceptance Criteria US-06', heading, 1)
+    with pytest.raises(T.ParseError):
+        T.parse(bad)
+
+
+def test_us_heading_without_us_table_fails():
+    bad = DOC.replace('| Persona | Aksi yang dilakukan | Hasil nilai bisnis |\n|---|---|---|\n| Customer | membuka halaman order | order hanya dibuat oleh pelanggan yang memenuhi syarat |\n', '', 1)
+    with pytest.raises(T.ParseError, match='US-07'):
+        T.parse(bad)
+
+
+@pytest.mark.parametrize('heading', ['## US-07 - Mengecek Kelayakan Order', '## US-7: Mengecek Kelayakan Order'])
+def test_malformed_us_heading_fails_with_line(heading):
+    bad = DOC.replace('## US-07: Mengecek Kelayakan Order', heading, 1)
+    with pytest.raises(T.ParseError, match='US-XX'):
+        T.parse(bad)
+
+
+def test_duplicate_ids_fail():
+    with pytest.raises(T.ParseError, match='AC-06.01'):
+        T.parse(DOC.replace('| AC-06.02 |', '| AC-06.01 |', 1))
+    dup_us = DOC + '\n## US-06: Lagi\n\n| Persona | Aksi yang dilakukan | Hasil nilai bisnis |\n|---|---|---|\n| A | b | c |\n'
+    with pytest.raises(T.ParseError, match='US-06'):
+        T.parse(dup_us)
+
+
+def test_same_module_mrtm_with_different_columns_fails():
+    extra = '''
+## US-08: Order Lain
+
+| Persona | Aksi yang dilakukan | Hasil nilai bisnis |
+|---|---|---|
+| Customer | membuka order lain | order sesuai aturan |
+
+### Acceptance Criteria US-08
+
+| AC-ID | Skenario | GIVEN | WHEN | THEN | Status |
+|---|---|---|---|---|---|
+| AC-08.01 | Happy: Matriks | g | w | Refer to MRTM Rows: TRM_ORD_003 through TRM_ORD_003 | Draft |
+
+### MRTM US-08
+
+| User Story ID | Acceptance Criteria ID | User | Test Case ID | Kode | HASIL (EXPECTED RESULT) |
+|---|---|---|---|---|---|
+| US_08 | AC_01 | Customer | TRM_ORD_003 | X | Y |
+'''
+    with pytest.raises(T.ParseError, match='ORD'):
+        T.parse(DOC + extra)
+
+
+def test_guide_split_suffix_ids_are_accepted():
+    ok = DOC.replace('| AC-06.02 |', '| AC-06.01b |', 1)
+    assert [r[0] for r in T.parse(ok)['ac']][:2] == ['AC-06.01', 'AC-06.01b']

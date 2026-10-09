@@ -56,7 +56,7 @@ Skill menerima kombinasi apa pun dari:
 ### 4.1 Susunan per US (chat dan `docs/ba/us-ac.md`)
 
 ```markdown
-## US-06 — Menambahkan Sertifikat Talent
+## US-06: Menambahkan Sertifikat Talent
 
 | Persona | Aksi yang dilakukan | Hasil nilai bisnis |
 |---|---|---|

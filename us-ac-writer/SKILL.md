@@ -26,16 +26,16 @@ Use whatever the user provides, in any combination: MoM, a narrative, screenshot
 2. **Check existing stories.** If `docs/ba/us-ac.md` or a pasted list exists, decide whether each key action is already covered by an existing US. If it is, add AC under that US instead of creating a new one. Continue numbering from the highest existing US and AC numbers.
 3. **Vertical slicing.** If a US covers more than 3 CRUD actions or more than 1 sprint, propose a split and wait for the user's agreement.
 4. **Write the US.** Action without "bisa" or "dapat"; business value without "agar" or "untuk". Title in the form verb + object. Validate each US against INVEST and fix failures before writing AC.
-5. **Choose the AC format per US.** Input/output variables at most 3 and logic combinations at most 3: Given/When/Then. Otherwise write one AC whose THEN is `Refer to MRTM Rows: <first TCID> through <last TCID> for comprehensive logic combinations.` and build the MRTM table.
+5. **Choose the AC format per US.** Input/output variables at most 3 and logic combinations at most 3: Given/When/Then. Otherwise write one AC whose THEN is `Refer to MRTM Rows: <first TCID> through <last TCID> for comprehensive logic combinations.` and build the MRTM table. That AC uses Skenario `Happy: <rule name> sesuai matriks`, a GIVEN that names the role and page, and a WHEN with the single user action that triggers the rule; the combinations, including the failing and boundary ones, live in the MRTM rows, not in extra narrative AC.
 6. **Write the AC.** At least one Happy, one Negative, and one Boundary or Edge scenario per US; add State and Permission scenarios when relevant. GIVEN names the page. WHEN holds only user actions, never `OR`. THEN is observable and quotes text verbatim. A system result between actions splits the AC.
 7. **Check before handing over.** Fix every violation, then show the result:
    - WHEN contains no system result ("aktif", "terbuka", "muncul", "berubah", "menampilkan", "sistem ...") and no `OR`.
    - Each AC has exactly one THEN (Rule P3-01).
    - Boundary values and edge cases are explicit (Rule RE-04).
-   - Every US has Happy, Negative, and Boundary or Edge scenarios.
-   - IDs follow `US-XX`, `AC-XX.YY` (XX is the story number), `TRM_[MODUL]_XXX`.
+   - Every US has Happy, Negative, and Boundary or Edge scenarios. For a story that uses MRTM, the category coverage is met by the MRTM rows: they must include at least one passing, one failing, and one boundary combination.
+   - IDs follow `US-XX`, `AC-XX.YY` (XX is the story number; a split scenario may add a letter, `AC-XX.01a`, as in the guide), `TRM_[MODUL]_XXX`. No ID is used twice.
    - No "bisa/dapat" in actions, no "agar/untuk" in business value, no emoji.
-8. **Hand over.** Show the blocks in chat, write them to `docs/ba/us-ac.md`, run `python <skill dir>/scripts/us_ac_to_tsv.py docs/ba/us-ac.md`, then list open questions and suggest `ba-grooming`.
+8. **Hand over.** Show the blocks in chat, write them to `docs/ba/us-ac.md`, run `python <skill dir>/scripts/us_ac_to_tsv.py docs/ba/us-ac.md`, then list the IDs added in this run, open questions, and suggest `ba-grooming`. Tell the user to paste only the new rows into the xlsx: the TSV files always hold every row, and pasting them over the sheet would overwrite statuses already changed there (Reviewed, Approved).
 
 ## Output format
 
