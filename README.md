@@ -21,6 +21,7 @@ a skill and the handbook disagree, the handbook wins.
 | 3. Analysis (impact/risk) | `impact-analysis` | `impact-assessment.md`, `risk-register.md` (4x4 model), `issue-register.md` (T-20), `change-readiness.md` |
 | 3. Analysis (UI spec) | `wireframe-spec` | `screen-inventory.md`, `navigation-flow.md`, `field-specs/*.md` (FSD Section 8) |
 | 3. Analysis (data) | `data-dictionary` | `data-dictionary.md`, `glossary.md`, `data-lineage.md` |
+| 3. Analysis (US & AC) | `us-ac-writer` | `us-ac.md` (per story: US, then its AC and MRTM), `us.tsv`, `ac.tsv`, `mrtm-*.tsv`; rules from SysFunc_US_AC_Guide and Appendix D |
 | 4. Design & Validation | `ba-grooming` | Business + Phase-4 validation review; `review-checklist.md` (T-15) |
 | 5. Approval & 6. Handoff | `ba-handoff` | `handoff-package.md`, `traceability-matrix.md` (T-13), `sign-off-checklist.md` (Approval Authority + DoR) |
 | 7. Support & Change Mgmt | `change-request` | `change-requests/CR-XX.md` (T-18), `cr-register.md` |
@@ -70,3 +71,7 @@ General-purpose helpers usable at any stage:
 - `handoff` — compact a conversation into a handoff doc for another agent.
 - `caveman` — ultra-terse response mode.
 - `skill-creator`, `write-a-skill` — create and extend skills for the pipeline.
+
+## Keeping handbook copies in sync
+
+`us-ac-writer/references/` holds exact copies of the handbook's `Template/SysFunc_US_AC_Guide.md` and `Appendix_D_Panduan_Praktik_US_AC.md`. After the handbook changes, run `python tools/sync_handbook.py --update` (set `BA_HANDBOOK_DIR` if the handbook is not at the default path), run `python -m pytest tests -q`, then rebuild the plugin with `python tools/build_plugin.py` and reinstall it.

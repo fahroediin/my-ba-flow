@@ -13,7 +13,7 @@ This skill asks "should we build this, and will the business know it's done?"
 
 ## What to do
 
-The user gives you one or more user stories and their acceptance criteria. Review them through the BA lens, producing questions for the product owner or stakeholders and concrete suggestions for improvement.
+The user gives you one or more user stories and their acceptance criteria. If they are not pasted, read `docs/ba/us-ac.md` written by `us-ac-writer`. Review them through the BA lens, producing questions for the product owner or stakeholders and concrete suggestions for improvement.
 
 ### BA Review Lens
 

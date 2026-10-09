@@ -34,7 +34,7 @@ Turn the interview into a draft the pipeline can consume. Produce three things a
 | US-01 | <role> | <what they do> | <why it matters> |
 ```
 
-**Acceptance criteria** — one row per criterion, tied to its story (scenario-level is enough at this stage; the pipeline refines the full Given/When/Then later):
+**Acceptance criteria** — one row per criterion, tied to its story (scenario-level is enough at this stage; `us-ac-writer` turns these into full Given/When/Then later):
 
 ```
 | AC ID | US | Scenario | Expected outcome |
