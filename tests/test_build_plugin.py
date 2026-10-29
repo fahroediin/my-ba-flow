@@ -3,7 +3,8 @@ import zipfile
 
 import build_plugin as B
 
-SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'grill-with-docs',
+SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'discovery-meeting-prep',
+          'grill-with-docs',
           'impact-analysis', 'process-mapping', 'product-discovery', 'requirement-elicitation', 'reverse-engineering',
           'solution-evaluation', 'stakeholder-interview', 'stop-slop', 'us-ac-writer', 'wireframe-spec']
 DROPPED = ['caveman', 'grill-me', 'handoff']
@@ -25,7 +26,8 @@ def test_plugin_contains_us_ac_writer_files(tmp_path):
     names = B.build(out)
     for name in ('skills/us-ac-writer/SKILL.md', 'skills/us-ac-writer/references/sysfunc-us-ac-guide.md',
                  'skills/us-ac-writer/references/appendix-d-us-ac.md', 'skills/us-ac-writer/scripts/us_ac_to_tsv.py',
-                 'skills/stop-slop/references/phrases.md', 'README.md', '.claude-plugin/plugin.json'):
+                 'skills/stop-slop/references/phrases.md',
+                 'skills/discovery-meeting-prep/references/question-bank.md', 'README.md', '.claude-plugin/plugin.json'):
         assert name in names, name
     assert not any('__pycache__' in n or n.startswith('skills/skill-creator') for n in names)
     with zipfile.ZipFile(out) as z:

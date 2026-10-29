@@ -29,6 +29,11 @@ a skill and the handbook disagree, the handbook wins.
 
 ### Optional on-ramps
 
+- `discovery-meeting-prep` — before the first client contact: classifies the session
+  (new system from scratch, vendor switch or troubled project, tender aanwijzing), builds
+  a prioritized, client-specific question list and red-flag watchlist from the team
+  question bank, then runs the post-meeting debrief that feeds `ba-planning` and
+  `stakeholder-interview`.
 - `product-discovery` — when starting from a raw idea with no requirements: interviews the
   user and emits a first-draft user-story / AC / sprint table that feeds
   `stakeholder-interview` and `requirement-elicitation`.
