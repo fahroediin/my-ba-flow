@@ -11,7 +11,7 @@ Two phases: **elicit through structured interview, then synthesize the BRD and b
 
 Aligned with BA Handbook Bab 4.4 (Analysis & Documentation), Bab 5 (Requirements Engineering), and Rules P3-01, P3-04, RE-04.
 
-Classify every requirement by its **ISO/IEC 29148 level** (Bab 5.2.1) and tag it accordingly: **Business Requirement** (organizational, lives in the BRD), **Stakeholder Requirement** (from a stakeholder's perspective), **Solution Requirement** (Functional and Non-Functional, the spec of what is built), and **Transition Requirement** (data migration and cutover needs). Tagging the level lets the RTM trace Business Need to Solution Requirement to Test Case bidirectionally (Bab 5.4).
+Classify every requirement by its **level** in the BABOK v3 §2.3 classification schema (Bab 5.2.1) and tag it accordingly: **Business Requirement** (organizational, lives in the BRD), **Stakeholder Requirement** (from a stakeholder's perspective), **Solution Requirement** (Functional and Non-Functional, the spec of what is built), and **Transition Requirement** (data migration and cutover needs). Tagging the level lets the RTM trace Business Need to Solution Requirement to Test Case bidirectionally (Bab 5.4).
 
 ## Phase 1 — Elicit
 
@@ -38,7 +38,7 @@ Then interview the user one topic at a time, recommending an answer for each. Co
   - **Compatibility**: co-existence, interoperability
   - **Usability**: learnability, operability, accessibility
   - **Reliability**: maturity, availability, fault tolerance, recoverability
-  - **Security**: confidentiality, integrity, non-repudiation, authentication, authorization
+  - **Security**: confidentiality, integrity, non-repudiation, accountability, authenticity
   - **Maintainability**: modularity, reusability, analysability, modifiability, testability
   - **Portability**: adaptability, installability, replaceability
   Every NFR must have a measurable target, not subjective descriptions.

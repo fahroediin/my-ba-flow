@@ -59,7 +59,7 @@ A power/interest grid with every identified stakeholder placed in one of four qu
 | Low Power, Low Interest | Monitor | (names/roles) |
 ```
 
-Below the grid, a detailed stakeholder register table (aligned with BA Handbook template T-02 and Bab 6.2.2):
+Below the grid, a detailed stakeholder register table (aligned with the BA Handbook Stakeholder Register in Bab 6.2.2):
 
 ```
 | ID | Name/Role | Department | Category | Power | Interest | Attitude | Current Engagement | Desired Engagement | Communication Pref | Frequency | Success Criteria |

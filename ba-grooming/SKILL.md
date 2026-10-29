@@ -7,7 +7,7 @@ description: Review user stories and acceptance criteria from the Business Analy
 
 The fifth step in the BA pipeline. This skill reviews stories from the **business perspective**: does the story deliver clear value, is the persona right, can a business user validate the acceptance criteria, and do the stories trace back to documented requirements?
 
-Aligned with BA Handbook Bab 4.5 (Design & Validation), Bab 4.7.1 (DoR), Bab 5.3.4 (AC Testability), Bab 14 (MRTM), and Rules P3-01, P4-01, RE-04, P6-03.
+Aligned with BA Handbook Bab 4.5 (Verification & Validation), Bab 4.7.1 (DoR), Bab 5.3.4 (AC Testability), Bab 14 (MRTM), and Rules P3-01, P4-01, RE-04, P6-03.
 
 This skill asks "should we build this, and will the business know it's done?"
 
@@ -67,23 +67,32 @@ For each user story, evaluate against these criteria:
 - Are there steps in the process map that no story covers?
 - Does the story skip steps or combine steps that the process map separates?
 
-### Requirements Validation (Bab 4.5)
+### Requirements Verification and Validation (Bab 4.5)
 
-Beyond the business-value lens, run each requirement and story through the BA Handbook Phase 4 validation checklist (Bab 4.5). This is the formal validation gate before stakeholder sign-off. Mark each criterion PASS / FAIL:
+Beyond the business-value lens, run each requirement and story through the two Phase 4 checklists in Bab 4.5. BABOK v3 keeps them apart: verification checks the quality of the requirement itself (Task 7.2), validation checks that it serves the business need (Task 7.3). This is the formal gate before stakeholder sign-off. Mark each criterion PASS / FAIL.
 
+#### Verification Checklist (BABOK Task 7.2, ISO/IEC/IEEE 29148 §5.2)
+
+- [ ] **Necessary** — removing it leaves a need unmet
+- [ ] **Singular** — one capability or constraint per requirement
+- [ ] **Unambiguous** — exactly one interpretation
 - [ ] **Complete** — no missing information
 - [ ] **Consistent** — no conflict with another requirement
-- [ ] **Correct** — accurately reflects the stakeholder need
-- [ ] **Feasible** — technically implementable
-- [ ] **Modifiable** — can change without excessive impact
-- [ ] **Unambiguous** — exactly one interpretation
-- [ ] **Testable** — verifiable through testing
-- [ ] **Traceable** — traces to a business need
-- [ ] **Verifiable** — implementation can be proven
+- [ ] **Feasible** — implementable within the known constraints
+- [ ] **Verifiable** — can be proven met, for example by a test
+- [ ] **Traceable** — traces to a business need and to a test case
+- [ ] **Prioritized** — carries a MoSCoW priority
+
+#### Validation Checklist (BABOK Task 7.3)
+
+- [ ] Linked to a clear business objective or business need
+- [ ] An authorized stakeholder confirmed it describes their need correctly
+- [ ] The assumptions behind it are confirmed
+- [ ] Its success criteria (AC or metric) can measure the expected value
 
 **Rule P4-01:** every requirements document must pass at least one peer review by another BA before it is presented to stakeholders. Record the reviewer and date. **Rule P4-02:** requirements not yet validated by the stakeholder must not be treated as "approved" or handed off to development.
 
-Record the validation and peer-review results as a **Review Checklist (T-15)** at `docs/ba/review-checklist.md` so Phase 4 has its mandated deliverable.
+Record the validation and peer-review results as a **Review Checklist** (Bab 9.4, Appendix B.3) at `docs/ba/review-checklist.md` so Phase 4 has its mandated deliverable.
 
 ### Output Structure
 

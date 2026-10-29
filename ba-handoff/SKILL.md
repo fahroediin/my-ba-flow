@@ -109,10 +109,10 @@ A structured summary document for the engineering team. Not a copy of every arti
 
 The proof that every business requirement has a path to delivery, and every deliverable traces back to a requirement.
 
-Follow the BA Handbook RTM template **T-13** and the bidirectional model in Bab 5.4.2: every Business Need traces down to a Test Case, and every deliverable traces back up to a Business Need. Carry the ISO 29148 requirement levels (Business Need, Stakeholder Requirement, Functional Requirement, NFR) so no level is skipped.
+Follow the BA Handbook RTM format and its bidirectional model in Bab 5.4.2: every Business Need traces down to a Test Case, and every deliverable traces back up to a Business Need. Carry the ISO 29148 requirement levels (Business Need, Stakeholder Requirement, Functional Requirement, NFR) so no level is skipped.
 
 ```markdown
-# Requirements Traceability Matrix (T-13)
+# Requirements Traceability Matrix (Bab 5.4.2)
 
 | Business Need | BR ID | Stakeholder Req | Functional Req / US | NFR ID | AC IDs | Screen(s) | Process Step | Test Case ID | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -165,7 +165,7 @@ Map each deliverable to its required reviewer and approver. Sign-off must be wri
 | Functional Specification Document (FSD) | BA Lead + Dev Lead | Product Owner + Dev Lead |
 | Process Model (BPMN / Mermaid) | BA Lead | Process Owner |
 | Non-Functional Requirements | BA Lead + Architect | Architect + Tech Lead |
-| Change Request | BA Lead | Change Advisory Board (CAB) |
+| Change Request | BA Lead | PM + Sponsor (Change Control Board) |
 
 ## Definition of Ready Compliance (Bab 4.7.1)
 

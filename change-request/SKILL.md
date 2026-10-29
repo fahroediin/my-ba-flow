@@ -63,7 +63,7 @@ Read the affected artifacts under `docs/ba/`: `brd.md`, `business-rules.md`, `tr
 | Role | Name | Decision | Date | Signature |
 | --- | --- | --- | --- | --- |
 | BA Lead (Reviewer) | | | | |
-| Change Advisory Board / Sponsor (Approver) | | | | |
+| PM + Sponsor (Change Control Board) (Approver) | | | | |
 ```
 
 ## Mandatory rules to enforce

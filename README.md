@@ -1,6 +1,6 @@
 # my-ba-flow — Business Analyst Pipeline (Claude Code Skills)
 
-Personal skill library that operationalizes the internal **BA Handbook v1.13** (https://ba-handbook-gamma.vercel.app/) as a
+Personal skill library that operationalizes the internal **BA Handbook v2.1** (https://ba.learning.my.id, login required) as a
 Claude Code / LLM skill pipeline. It takes a business need from project kickoff all the
 way to solution evaluation, producing the planning, requirements, process, impact,
 validation, and handoff artifacts the handbook mandates. Each stage reads the artifacts
@@ -14,16 +14,16 @@ a skill and the handbook disagree, the handbook wins.
 
 | Phase (Bab 4) | Skill | Produces |
 | --- | --- | --- |
-| 1. Planning & Scoping | `ba-planning` | `ba-work-plan.md` (T-01), `ba-approach.md`, `communication-plan.md` (T-03), `context-diagram.md` |
-| 1. Planning (stakeholders) | `stakeholder-interview` | `stakeholder-map.md` (T-02), `interview-notes.md`, `pain-points-register.md`, `assumptions-log.md` |
+| 1. Planning & Scoping | `ba-planning` | `ba-work-plan.md`, `ba-approach.md`, `communication-plan.md`, `context-diagram.md` |
+| 1. Planning (stakeholders) | `stakeholder-interview` | `stakeholder-map.md` (Bab 6.2.2), `interview-notes.md`, `pain-points-register.md`, `assumptions-log.md` |
 | 2. Elicitation & Discovery | `requirement-elicitation` | `brd.md` (T-07), `business-rules.md` |
-| 3. Analysis & Documentation | `process-mapping` | `process-map-as-is.md`, `process-map-to-be.md`, `gap-analysis.md` (Process Model T-10) |
-| 3. Analysis (impact/risk) | `impact-analysis` | `impact-assessment.md`, `risk-register.md` (4x4 model), `issue-register.md` (T-20), `change-readiness.md` |
+| 3. Analysis & Documentation | `process-mapping` | `process-map-as-is.md`, `process-map-to-be.md`, `gap-analysis.md` (Process Model) |
+| 3. Analysis (impact/risk) | `impact-analysis` | `impact-assessment.md`, `risk-register.md` (4x4 model), `issue-register.md` (Issue Log, Bab 7.7.2), `change-readiness.md` |
 | 3. Analysis (UI spec) | `wireframe-spec` | `screen-inventory.md`, `navigation-flow.md`, `field-specs/*.md` (FSD Section 8) |
 | 3. Analysis (data) | `data-dictionary` | `data-dictionary.md`, `glossary.md`, `data-lineage.md` |
 | 3. Analysis (US & AC) | `us-ac-writer` | `us-ac.md` (per story: US, then its AC and MRTM), `us.tsv`, `ac.tsv`, `mrtm-*.tsv`; rules from SysFunc_US_AC_Guide and Appendix D |
-| 4. Design & Validation | `ba-grooming` | Business + Phase-4 validation review; `review-checklist.md` (T-15) |
-| 5. Approval & 6. Handoff | `ba-handoff` | `handoff-package.md`, `traceability-matrix.md` (T-13), `sign-off-checklist.md` (Approval Authority + DoR) |
+| 4. Verification & Validation | `ba-grooming` | Business review + Phase-4 verification and validation checklists; `review-checklist.md` (Bab 9.4) |
+| 5. Approval & 6. Handoff | `ba-handoff` | `handoff-package.md`, `traceability-matrix.md` (Bab 5.4.2), `sign-off-checklist.md` (Approval Authority + DoR) |
 | 7. Support & Change Mgmt | `change-request` | `change-requests/CR-XX.md` (T-18), `cr-register.md` |
 | 8. Solution Evaluation | `solution-evaluation` | `uat-signoff.md`, `solution-evaluation.md`, `lesson-learned.md` |
 
@@ -48,15 +48,15 @@ a skill and the handbook disagree, the handbook wins.
    contract.
 6. `ba-grooming` validates stories from the business perspective and runs the Phase-4
    validation gate (peer review, Rule P4-01).
-7. `ba-handoff` compiles everything with a T-13 traceability matrix, Approval Authority,
+7. `ba-handoff` compiles everything with a Bab 5.4.2 traceability matrix, Approval Authority,
    and the DoR gate.
 8. After baseline, `change-request` governs every change (Rule P7-01); after go-live,
    `solution-evaluation` runs UAT sign-off and Lesson Learned (Rule P8-01).
 
 ## Governance baked into every deliverable-producing skill
 
-- Outputs target the handbook's official templates (T-01, T-02, T-03, T-04, T-07, T-10,
-  T-13, T-15, T-17, T-18, T-20) rather than ad-hoc formats (Rule DL-01, P3-03).
+- Outputs target the handbook's official templates and formats in Bab 8 (T-04, T-07, T-09,
+  T-18, T-App-BA/UIUX/Eng, T-PRD, T-FSD, T-RES) rather than ad-hoc formats (Rule DL-01, P3-03).
 - Every deliverable carries a Revision History and version control (Rule DL-02).
 - AI-drafted content must be reviewed by the responsible BA before it becomes an official
   deliverable, and AI assistance is logged in the Revision History (Rules AI-01, AI-03).

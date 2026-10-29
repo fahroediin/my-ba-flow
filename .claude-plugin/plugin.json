@@ -1,8 +1,8 @@
 {
   "name": "my-ba-flow",
   "version": "1.3.0",
-  "description": "Business Analyst pipeline aligned to the internal BA Handbook v1.13 (https://ba-handbook-gamma.vercel.app/). Takes a business need from project kickoff to solution evaluation across the 8-phase BA lifecycle: planning, stakeholder mapping, requirement elicitation, process mapping, impact and risk analysis, grooming and validation, UI and data specs, engineering handoff, change requests, and lesson learned.",
-  "homepage": "https://ba-handbook-gamma.vercel.app/",
+  "description": "Business Analyst pipeline aligned to the internal BA Handbook v2.1 (https://ba.learning.my.id). Takes a business need from project kickoff to solution evaluation across the 8-phase BA lifecycle: planning, stakeholder mapping, requirement elicitation, process mapping, impact and risk analysis, grooming and validation, UI and data specs, engineering handoff, change requests, and lesson learned.",
+  "homepage": "https://ba.learning.my.id",
   "author": {
     "name": "Fahrudin"
   },

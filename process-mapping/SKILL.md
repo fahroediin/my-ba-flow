@@ -7,7 +7,7 @@ description: Map business processes as AS-IS (current state) and TO-BE (future s
 
 The third step in the BA pipeline. Takes the business requirements and stakeholder context and turns them into visual process flows. The gap between AS-IS and TO-BE is where the project's real value lives; this skill makes that gap explicit and measurable.
 
-Aligned with BA Handbook Bab 4.4 (Analysis), Bab 10.4.1 (BPMN), and Bab 12 (Visual Guide). The three outputs together form the **Process Model** deliverable (template T-10, Bab 8). Process diagrams use Mermaid flowcharts following BPMN-equivalent conventions (see notation guide below).
+Aligned with BA Handbook Bab 4.4 (Analysis), Bab 10.4.1 (BPMN), and Bab 12 (Visual Guide). The three outputs together form the **Process Model** deliverable (Bab 8, notation per Bab 10.4). Process diagrams use Mermaid flowcharts following BPMN-equivalent conventions (see notation guide below).
 
 Three phases: **map the current state, design the future state, then analyze the gap.**
 

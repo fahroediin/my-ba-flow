@@ -35,7 +35,7 @@ Elicit the planning context one topic at a time, recommending an answer for each
 
 ## Phase 2 — Synthesize the artifacts
 
-### Artifact 1: BA Work Plan (`ba-work-plan.md`) — template T-01
+### Artifact 1: BA Work Plan (`ba-work-plan.md`) — free format, mandatory coverage per Rule P1-01 (Bab 4.2)
 
 ```markdown
 # BA Work Plan
@@ -90,7 +90,7 @@ State the chosen delivery approach and what it implies:
 | Emphasized artifacts | (e.g. User Stories + MRTM for Agile; BRD + FSD for Waterfall) |
 | Elicitation techniques planned | (interview, workshop, observation, survey, document analysis) |
 
-### Artifact 3: Communication Plan (`communication-plan.md`) — template T-03
+### Artifact 3: Communication Plan (`communication-plan.md`) — Bab 6.4.1
 
 Follow the BA Handbook format (Bab 6.4.1):
 
