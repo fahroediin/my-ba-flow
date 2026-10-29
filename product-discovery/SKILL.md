@@ -11,7 +11,7 @@ Two phases: **interview to elicit the product, then synthesize the requirements 
 
 ## Phase 1 — Interview
 
-Elicit the product the way `grill-me` interviews a plan: one question at a time, recommend an answer for each, walk down each branch until it resolves, and do not move on until the user confirms. The goal is to extract enough to write real stories, not to design the solution. Cover, adapting to the idea:
+Interview relentlessly: one question at a time, recommend an answer for each, walk down each branch until it resolves, and do not move on until the user confirms. The goal is to extract enough to write real stories, not to design the solution. Cover, adapting to the idea:
 
 - **Problem and outcome.** What problem does this solve, for whom, and what does success look like? What happens today without it?
 - **Users and roles.** Who uses it? Name the distinct personas/roles and what separates them (permissions, goals). Roles drive both stories and later RBAC.

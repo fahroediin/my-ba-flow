@@ -66,11 +66,13 @@ a skill and the handbook disagree, the handbook wins.
 
 General-purpose helpers usable at any stage:
 
-- `grill-me`, `grill-with-docs` — stress-test a plan or design before finalizing.
+- `grill-with-docs` — stress-test a plan against the project's domain language and docs before finalizing.
 - `stop-slop` — remove AI writing patterns from prose.
-- `handoff` — compact a conversation into a handoff doc for another agent.
-- `caveman` — ultra-terse response mode.
-- `skill-creator`, `write-a-skill` — create and extend skills for the pipeline.
+
+One skill per job: `grill-me`, `handoff`, and `caveman` were dropped in 1.3.0 because
+`grill-with-docs`, the app's own session handoff, and plain writing rules already cover
+them. `skill-creator/` and `write-a-skill/` stay in the repo as authoring notes only and
+are not shipped in the plugin.
 
 ## Keeping handbook copies in sync
 

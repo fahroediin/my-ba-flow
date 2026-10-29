@@ -7,10 +7,9 @@ import zipfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'caveman', 'change-request', 'data-dictionary', 'grill-me',
-          'grill-with-docs', 'handoff', 'impact-analysis', 'process-mapping', 'product-discovery',
-          'requirement-elicitation', 'reverse-engineering', 'solution-evaluation', 'stakeholder-interview',
-          'stop-slop', 'us-ac-writer', 'wireframe-spec']
+SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'grill-with-docs',
+          'impact-analysis', 'process-mapping', 'product-discovery', 'requirement-elicitation', 'reverse-engineering',
+          'solution-evaluation', 'stakeholder-interview', 'stop-slop', 'us-ac-writer', 'wireframe-spec']
 SKIP = {'__pycache__', '.pytest_cache'}
 
 

@@ -3,14 +3,21 @@ import zipfile
 
 import build_plugin as B
 
-OLD_SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'caveman', 'change-request', 'data-dictionary', 'grill-me',
-              'grill-with-docs', 'handoff', 'impact-analysis', 'process-mapping', 'product-discovery',
-              'requirement-elicitation', 'reverse-engineering', 'solution-evaluation', 'stakeholder-interview',
-              'stop-slop', 'wireframe-spec']
+SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'grill-with-docs',
+          'impact-analysis', 'process-mapping', 'product-discovery', 'requirement-elicitation', 'reverse-engineering',
+          'solution-evaluation', 'stakeholder-interview', 'stop-slop', 'us-ac-writer', 'wireframe-spec']
+DROPPED = ['caveman', 'grill-me', 'handoff']
 
 
-def test_skill_list_keeps_existing_and_adds_us_ac_writer():
-    assert sorted(B.SKILLS) == sorted(OLD_SKILLS + ['us-ac-writer'])
+def test_skill_list_has_one_skill_per_job():
+    assert sorted(B.SKILLS) == sorted(SKILLS)
+
+
+def test_dropped_skills_are_gone_from_repo_and_plugin(tmp_path):
+    names = B.build(tmp_path / 'my-ba-flow.plugin')
+    for skill in DROPPED:
+        assert not (B.REPO / skill).exists(), skill
+        assert not any(n.startswith(f'skills/{skill}/') for n in names), skill
 
 
 def test_plugin_contains_us_ac_writer_files(tmp_path):
@@ -22,4 +29,4 @@ def test_plugin_contains_us_ac_writer_files(tmp_path):
         assert name in names, name
     assert not any('__pycache__' in n or n.startswith('skills/skill-creator') for n in names)
     with zipfile.ZipFile(out) as z:
-        assert json.loads(z.read('.claude-plugin/plugin.json'))['version'] == '1.2.0'
+        assert json.loads(z.read('.claude-plugin/plugin.json'))['version'] == '1.3.0'
