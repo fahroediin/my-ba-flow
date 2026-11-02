@@ -9,6 +9,7 @@ from skill_checks import REPO, missing_refs, prose_violations, read_skill
 NEW_SKILLS = {
     'demo-terpandu-fgd': ['panduan demo', 'FGD', 'prototype'],
     'product-onboarding': ['zip', 'rar', 'product based', 'aplikasi'],
+    'fit-gap': ['fit-gap', 'calon klien', 'product based'],
 }
 
 
@@ -78,3 +79,21 @@ def test_product_onboarding_versions_do_not_overwrite():
 def test_product_onboarding_is_not_bab_4a():
     _, body = read_skill('product-onboarding')
     assert 'RE Scope Statement' in body and 'reverse-engineering' in body
+
+
+def test_fit_gap_statuses_and_handoff():
+    _, body = read_skill('fit-gap')
+    for s in ('Fit', 'Fit dengan konfigurasi', 'Gap kecil', 'Gap besar', 'Tidak dibutuhkan',
+              'dikonfirmasi', 'dibantah', 'belum', 'fit-gap-<klien>.md', 'docs/ba/product-input/',
+              'ba-planning', 'reverse-engineering', 'requirement-elicitation', 'P1-01', 'gap-analysis.md'):
+        assert s in body, s
+
+
+def test_fit_gap_requires_session_evidence():
+    _, body = read_skill('fit-gap')
+    assert 'no debrief' in body.lower() and 'discovery-meeting-prep' in body
+
+
+def test_fit_gap_is_product_based_only():
+    _, body = read_skill('fit-gap')
+    assert 'project based' in body and 'ba-grooming' in body

@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'demo-terpandu-fgd',
-          'discovery-meeting-prep',
+          'discovery-meeting-prep', 'fit-gap',
           'grill-with-docs',
           'impact-analysis', 'process-mapping', 'product-discovery', 'product-onboarding', 'requirement-elicitation', 'reverse-engineering',
           'solution-evaluation', 'stakeholder-interview', 'stop-slop', 'us-ac-writer', 'wireframe-spec']
