@@ -54,15 +54,17 @@ Disusun dengan bantuan AI, ditinjau oleh BA: (nama)
 | BR-01 | (aturan) | kode / UI / API | (yang dicoba dan hasilnya) | Terbukti / Asumsi |
 ```
 
-`Terbukti`: aturan dicoba dan berperilaku konsisten. `Asumsi`: ada di kode atau tampilan tetapi belum pernah dikonfirmasi pengguna nyata, atau belum bisa dicoba.
+`Terbukti`: aturan dicoba di aplikasi yang berjalan dan berperilaku konsisten. `Asumsi`: terlihat di kode atau tampilan tetapi belum dicoba atau tidak bisa dicoba. Label ini hanya menyatakan perilaku aplikasi; kecocokan dengan cara kerja klien dicatat terpisah sebagai status klien (`dikonfirmasi`, `dibantah`, `belum`) di debrief.
 
 ## assumptions-to-confirm.md
 
 ```markdown
-| ID | Asumsi | Asal (BR/F) | Pertanyaan ke calon klien | Dampak bila salah |
-| --- | --- | --- | --- | --- |
-| AS-01 | | BR-03 | | |
+| ID | Hal yang dikonfirmasi | Asal (BR/F) | Label | Pertanyaan ke calon klien | Dampak bila salah | Status klien |
+| --- | --- | --- | --- | --- | --- | --- |
+| AS-01 | | BR-03 | Terbukti / Asumsi | | | dikonfirmasi / dibantah / belum |
 ```
+
+Isi semua aturan `Asumsi`, aturan `Terbukti` yang menentukan proses harian klien, dan fitur tanpa kebutuhan jelas. Kolom Status klien diisi saat debrief.
 
 ## demo-traps.md
 

@@ -98,7 +98,7 @@ Map the product based labels to the Confidence Level Framework:
 | Product based label | Confidence Level |
 | --- | --- |
 | `Terbukti` in the app and confirmed by the client (`dikonfirmasi`) | High (two sources) |
-| One source only: `Terbukti` in the app, or an `Asumsi` the client confirmed | Medium |
+| One source only: `Terbukti` in the app without a client status, or an `Asumsi` the client confirmed | Medium |
 | `Asumsi` not yet confirmed (`belum`) | Low |
 | `Asumsi` the client rejected (`dibantah`) | Not baseline; record it as a gap |
 

@@ -7,20 +7,9 @@ description: Entry point of the my-ba-flow pipeline. Asks which work model appli
 
 Routes BA work into one of two models and keeps the BA oriented. This skill does not write documents; it asks, shows the route, and hands over to the skill that does the work.
 
-## Step 1: Ask the model
+## Step 1: Find where the work stands
 
-Ask with AskUserQuestion when available, otherwise as a plain question. Never pick for the user.
-
-| Model | Signals |
-| --- | --- |
-| Product based | The application already exists before any client: built by Pak Tan (CEO) or by the BA (e.g. tester-lab), delivered as a zip or rar of source code, to be explained to prospective clients |
-| Project based | A client need comes first; the team builds from scratch and may show mockups, Figma with user flow, or a prototype when the client needs speed |
-
-For product based, also ask who built it: Pak Tan, the BA, or someone else. If the BA built it, the BA can answer intent questions directly. If Pak Tan or an AI-assisted build produced it, every rule not confirmed by real users is treated as an assumption.
-
-## Step 2: Find where the work stands
-
-Before showing the route, look at the working folder. If any of these exist, report the current position and the next step; do not restart from the beginning.
+Look at the working folder first. Files that exist already tell the model (anything under `docs/ba/product/` is product based); ask only when nothing is found. If any of these exist, report the current position and the next step; do not restart from the beginning. With several products, versions or clients, report one line per product, version and client (for example: client A has a fit-gap, client B only a meeting prep), then ask which one to continue.
 
 | Found | Position | Next step |
 | --- | --- | --- |
@@ -32,6 +21,17 @@ Before showing the route, look at the working folder. If any of these exist, rep
 | `docs/ba/product-input/` or `docs/ba/ba-work-plan.md` | Project started | Continue the Handbook pipeline from the latest existing deliverable |
 
 When a newer product version arrives while an older version folder exists, the next step is `product-onboarding` for the new version.
+
+## Step 2: Ask the model
+
+Ask only when nothing was found in Step 1, or when the user starts something new. Ask with AskUserQuestion when available, otherwise as a plain question. Never pick for the user.
+
+| Model | Signals |
+| --- | --- |
+| Product based | The application already exists before any client: built by Pak Tan (CEO) or by the BA (e.g. tester-lab), delivered as a zip or rar of source code, to be explained to prospective clients |
+| Project based | A client need comes first; the team builds from scratch and may show mockups, Figma with user flow, or a prototype when the client needs speed |
+
+For product based, also ask who built it: Pak Tan, the BA, or someone else. If the BA built it, the BA can answer intent questions directly. If Pak Tan or an AI-assisted build produced it, nobody has checked its rules with real users yet; the client conversation settles them.
 
 ## Step 3: Show the route
 

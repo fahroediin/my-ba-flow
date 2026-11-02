@@ -1,6 +1,6 @@
 ---
 name: product-discovery
-description: Optional pre-pipeline skill for when there are no user stories or acceptance criteria yet. Interviews the user about a raw product idea, then synthesizes the result into the Markdown table of user stories, acceptance criteria, and a sprint breakdown that the rest of the BA pipeline (requirement-elicitation, ba-grooming) consumes as its step-1 input. Use when the user has an idea but no written requirements, wants to start a project from scratch, says "I don't have user stories yet", "help me figure out the requirements", "turn this idea into stories", or asks where to begin.
+description: Optional pre-pipeline skill for when there are no user stories or acceptance criteria yet. Interviews the user about a raw product idea, then synthesizes the result into the Markdown table of user stories, acceptance criteria, and a sprint breakdown that the rest of the BA pipeline (requirement-elicitation, ba-grooming) consumes as its step-1 input. Use when the user has a product idea but no written requirements and no application yet, says "I don't have user stories yet", "help me figure out the requirements", or "turn this idea into stories". Routing between product based and project based work belongs to ba-start.
 ---
 
 # Product Discovery

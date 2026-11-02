@@ -1,6 +1,6 @@
 ---
 name: product-onboarding
-description: Product based on-ramp. Turns a finished application handed over as a zip or rar file (source code) into a light product brief a BA can explain to prospective clients - what it is for, roles, modules, business flows, business rules labelled Terbukti or Asumsi, assumptions to confirm with the client, and demo traps. Extracts the archive, reads the code, runs the app locally and probes edge cases. Use when the user receives an app built by the CEO (Pak Tan) or by the BA, says "pelajari aplikasi ini", "aplikasi baru dari Pak Tan", "ini file zip/rar aplikasinya", "jelaskan aplikasi ini ke calon klien", "apa isi aplikasi ini", or starts the product based path from ba-start.
+description: Product based on-ramp. Turns a finished application handed over as a zip or rar file (source code) into a light product brief a BA can explain to prospective clients - what it is for, roles, modules, business flows, business rules labelled Terbukti or Asumsi, assumptions to confirm with the client, and demo traps. Extracts the archive, reads the code, runs the app locally and probes edge cases. Use when the user receives an app built by the CEO (Pak Tan) or by the BA, says "pelajari aplikasi ini", "ini file zip/rar aplikasinya", "jelaskan aplikasi ini ke calon klien", "apa isi aplikasi ini", or starts the product based path from ba-start.
 ---
 
 # Product Onboarding
@@ -15,7 +15,7 @@ Ask for whatever is missing, one at a time:
 
 - Path to the zip or rar file (always source code for this path).
 - Product name and version (from the file name, README or release notes if not given).
-- Who built it: Pak Tan, the BA, or someone else. If the BA built it, ask the BA about intent instead of guessing; if Pak Tan built it, every unconfirmed rule stays `Asumsi`.
+- Who built it: Pak Tan, the BA, or someone else. If the BA built it, ask the BA about intent instead of guessing; if Pak Tan built it, nobody has checked the rules with real users yet, so the client conversation matters more.
 - Optional: the prospective client and their industry, to know which modules matter most.
 
 ## Step 1: Extract
@@ -43,7 +43,14 @@ If the app cannot run locally (cloud-only dependency, build fails, missing secre
 
 ## Step 4: Probe edge cases
 
-Through the UI or the app's own API, try the cases a client will ask about: invalid input (negative, zero, empty, future dates), permissions across roles, tenant isolation if multi-tenant, concurrent edits. Record each result as evidence (what was tried, what happened). A rule becomes `Terbukti` only after it was exercised and behaved consistently.
+Through the UI or the app's own API, try the cases a client will ask about: invalid input (negative, zero, empty, future dates), permissions across roles, tenant isolation if multi-tenant, concurrent edits. Record each result as evidence (what was tried, what happened).
+
+The labels describe what the app does, nothing more:
+
+- `Terbukti`: the rule was exercised in the running app (or its API) and behaved consistently.
+- `Asumsi`: seen in code or screens but not exercised, or impossible to exercise (for example the app did not run).
+
+Whether a rule fits how real users work is a separate question, answered only by the client. That answer is the client status (`dikonfirmasi`, `dibantah`, `belum`), recorded per rule in the debrief. A `Terbukti` rule can still be `dibantah` by a client.
 
 ## Step 5: Compare versions
 
@@ -58,7 +65,7 @@ Write to `docs/ba/product/<produk>-<versi>/`, following `references/output-templ
 | `product-brief.md` | Purpose, users, problem solved, modules, roles and their work, business flow, how to run locally, readiness (siap demo / siap pilot / belum), what changed since the previous version |
 | `feature-inventory.md` | Features per module/menu, roles that use them, evidence (screen, route, action) |
 | `business-rules-found.md` | Every rule found, labelled `Terbukti` or `Asumsi`, with source and evidence |
-| `assumptions-to-confirm.md` | Questions for the prospective client derived from `Asumsi` rules and features with no clear need behind them |
+| `assumptions-to-confirm.md` | Every rule that needs a client status: all `Asumsi` rules, `Terbukti` rules that shape the client's daily process (approvals, payment, stock, status changes), and features with no clear need behind them |
 | `demo-traps.md` | What to avoid or explain during a demo, with the workaround for each |
 
 Show the user a short summary: what the product does in three sentences, the five most important `Asumsi` items, and the traps that would hurt a demo most.

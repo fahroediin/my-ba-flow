@@ -1,3 +1,4 @@
+import re
 import shutil
 import subprocess
 
@@ -139,3 +140,39 @@ def test_product_discovery_does_not_claim_existing_apps():
 def test_wireframe_spec_points_to_demo_guide():
     _, body = read_skill('wireframe-spec')
     assert 'demo-terpandu-fgd' in body.split('## Handoff')[1]
+
+
+def _quoted_triggers(name):
+    head, _ = read_skill(name)
+    return [p.lower() for p in re.findall(r'"([^"]+)"', head['description'])]
+
+
+def test_no_trigger_collisions_with_new_skills():
+    names = ['ba-start', 'product-onboarding', 'fit-gap', 'demo-terpandu-fgd', 'product-discovery',
+             'reverse-engineering', 'discovery-meeting-prep']
+    for a in names:
+        for b in names:
+            if a == b:
+                continue
+            for pa in _quoted_triggers(a):
+                for pb in _quoted_triggers(b):
+                    assert pa not in pb, (a, pa, b, pb)
+    head, _ = read_skill('product-discovery')
+    assert 'where to begin' not in head['description'] and 'from scratch' not in head['description']
+
+
+def test_terbukti_and_asumsi_have_one_meaning():
+    _, onboarding = read_skill('product-onboarding')
+    _, start = read_skill('ba-start')
+    for text in (onboarding, start):
+        assert 'not confirmed by real users' not in text
+    assert 'client status' in onboarding
+    tmpl = (REPO / 'product-onboarding/references/output-templates.md').read_text(encoding='utf-8')
+    section = tmpl.split('## assumptions-to-confirm.md')[1]
+    assert '| Label |' in section or '| Label' in section
+
+
+def test_ba_start_detects_position_before_asking():
+    _, body = read_skill('ba-start')
+    assert body.index('Find where the work stands') < body.index('Ask the model')
+    assert 'one line per' in body and 'only when nothing' in body
