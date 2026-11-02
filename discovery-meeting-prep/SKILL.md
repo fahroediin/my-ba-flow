@@ -80,7 +80,7 @@ Write `docs/ba/meeting-prep-<client>-<YYYY-MM-DD>.md` (for Product demo to a pro
 - Documents promised by the client
 ```
 
-Remind the user: one BA asks, one BA captures; ask permission to record at the start.
+Remind the user: one BA asks, one BA captures; ask permission to record at the start. To surface gaps while the meeting runs, use `meeting-live-assist` with this prep sheet loaded.
 
 ## Step 5 — Debrief (after the meeting)
 

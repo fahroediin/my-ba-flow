@@ -50,6 +50,9 @@ Product based route: `product-onboarding` (extract, run, product brief with rule
   a prioritized, client-specific question list and red-flag watchlist from the team
   question bank, then runs the post-meeting debrief that feeds `ba-planning` and
   `stakeholder-interview`.
+- `meeting-live-assist` (during the meeting): processes the live transcript in chunks of
+  5 to 10 minutes, returns at most three questions to ask now plus Open Questions and
+  Assumptions rows in the MoM template (T-04) format, and replays saved transcripts.
 - `product-discovery` — when starting from a raw idea with no requirements: interviews the
   user and emits a first-draft user-story / AC / sprint table that feeds
   `stakeholder-interview` and `requirement-elicitation`.

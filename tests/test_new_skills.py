@@ -12,6 +12,7 @@ NEW_SKILLS = {
     'demo-terpandu-fgd': ['panduan demo', 'FGD', 'prototype'],
     'product-onboarding': ['zip', 'rar', 'product based', 'aplikasi'],
     'fit-gap': ['fit-gap', 'calon klien', 'product based'],
+    'meeting-live-assist': ['meeting sedang berjalan', 'potongan transkrip', 'Live Captions', 'replay'],
 }
 
 
@@ -123,6 +124,29 @@ def test_discovery_has_product_demo_session():
     assert '## Bagian E: Demo produk ke calon klien' in bank and '| E-01 |' in bank
 
 
+def test_live_assist_chunk_format_matches_mom_template():
+    _, body = read_skill('meeting-live-assist')
+    for s in ('Tanyakan sekarang', 'Baru dibahas', 'Terjawab',
+              '| No | Pertanyaan | Perlu Jawaban Dari | Deadline Jawaban |',
+              '| No | Asumsi Logika Bisnis / Teknis | Konfirmasi Diperlukan Dari |',
+              'T-04', 'Template_MoM.md'):
+        assert s in body, s
+    assert 'at most 3' in body
+
+
+def test_live_assist_setup_close_and_replay():
+    _, body = read_skill('meeting-live-assist')
+    for s in ('meeting-prep', 'selesai', 'P2-01', 'P2-03', 'risk if wrong',
+              'docs/ba/meeting-live-', 'Replay mode', 'Hollyland', 'NDA'):
+        assert s in body, s
+    assert 'never invent' in body.lower()
+
+
+def test_discovery_points_to_live_assist():
+    _, body = read_skill('discovery-meeting-prep')
+    assert 'meeting-live-assist' in body
+
+
 def test_reverse_engineering_accepts_product_input():
     head, body = read_skill('reverse-engineering')
     assert '## Input from product based' in body
@@ -149,7 +173,7 @@ def _quoted_triggers(name):
 
 def test_no_trigger_collisions_with_new_skills():
     names = ['ba-start', 'product-onboarding', 'fit-gap', 'demo-terpandu-fgd', 'product-discovery',
-             'reverse-engineering', 'discovery-meeting-prep']
+             'reverse-engineering', 'discovery-meeting-prep', 'meeting-live-assist']
     for a in names:
         for b in names:
             if a == b:

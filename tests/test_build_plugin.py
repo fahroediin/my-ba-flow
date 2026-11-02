@@ -6,7 +6,7 @@ import build_plugin as B
 SKILLS = ['ba-grooming', 'ba-start', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'demo-terpandu-fgd',
           'discovery-meeting-prep', 'fit-gap',
           'grill-with-docs',
-          'impact-analysis', 'process-mapping', 'product-discovery', 'product-onboarding', 'requirement-elicitation', 'reverse-engineering',
+          'impact-analysis', 'meeting-live-assist', 'process-mapping', 'product-discovery', 'product-onboarding', 'requirement-elicitation', 'reverse-engineering',
           'solution-evaluation', 'stakeholder-interview', 'stop-slop', 'us-ac-writer', 'wireframe-spec']
 DROPPED = ['caveman', 'grill-me', 'handoff']
 
@@ -30,12 +30,12 @@ def test_plugin_contains_us_ac_writer_files(tmp_path):
                  'skills/stop-slop/references/phrases.md',
                  'skills/discovery-meeting-prep/references/question-bank.md', 'README.md', '.claude-plugin/plugin.json',
                  'skills/ba-start/SKILL.md', 'skills/product-onboarding/references/output-templates.md',
-                 'skills/fit-gap/SKILL.md', 'skills/demo-terpandu-fgd/assets/demo-proxy.mjs',
+                 'skills/fit-gap/SKILL.md', 'skills/meeting-live-assist/SKILL.md','skills/demo-terpandu-fgd/assets/demo-proxy.mjs',
                  'skills/demo-terpandu-fgd/scripts/import-questions.mjs'):
         assert name in names, name
     assert not any('__pycache__' in n or n.startswith('skills/skill-creator') for n in names)
     with zipfile.ZipFile(out) as z:
-        assert json.loads(z.read('.claude-plugin/plugin.json'))['version'] == '1.4.0'
+        assert json.loads(z.read('.claude-plugin/plugin.json'))['version'] == '1.5.0'
 
 
 def test_readme_explains_two_work_models():
