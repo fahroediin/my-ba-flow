@@ -1,6 +1,6 @@
 ---
 name: discovery-meeting-prep
-description: Prepare a BA for an initial client meeting or a tender aanwijzing session by classifying the session (new system from scratch, vendor switch or troubled project, tender aanwijzing), then producing a prioritized, client-specific question list, a red-flag watchlist, and a capture sheet from the team's question bank. Also runs the post-meeting debrief that turns notes into a pain points register, assumptions log, and open questions. Use when the user says "prep my client meeting", "what should I ask the client", "initial meeting", "discovery meeting", "kickoff with client", "aanwijzing", "pertanyaan untuk klien", "review this KAK/TOR/RKS", "client wants to switch vendor", or shares meeting context, a client profile, or tender documents before a session.
+description: Prepare a BA for an initial client meeting or a tender aanwijzing session by classifying the session (new system from scratch, vendor switch or troubled project, tender aanwijzing, product demo to a prospect), then producing a prioritized, client-specific question list, a red-flag watchlist, and a capture sheet from the team's question bank. Also runs the post-meeting debrief that turns notes into a pain points register, assumptions log, and open questions. Use when the user says "prep my client meeting", "what should I ask the client", "initial meeting", "discovery meeting", "kickoff with client", "aanwijzing", "pertanyaan untuk klien", "review this KAK/TOR/RKS", "client wants to switch vendor", or shares meeting context, a client profile, or tender documents before a session.
 ---
 
 # Discovery Meeting Prep
@@ -20,6 +20,9 @@ Ask the user (or infer from what they shared, then confirm):
 | New system from scratch | No system yet, manual/Excel process, "we want an app like X" | Core A + Module B |
 | Vendor switch / troubled project | Existing system or project with a previous vendor, unhappy with results | Core A + Module C |
 | Tender aanwijzing | KAK/TOR/RKS exists, formal Q&A before bid submission | Module D first, then Core A as a gap filter on the KAK |
+| Product demo to a prospect (product based) | A finished product, already described by `product-onboarding`, is shown to a prospective client | Core A + Module E |
+
+For **Product demo to a prospect**, the required context is `docs/ba/product/<produk>-<versi>/product-brief.md` and `assumptions-to-confirm.md`. Turn every assumption into a must-ask question (Module E covers the pattern). This session type stays in the light format of the product based path: its prep sheet and debrief go to the product's session folder, not to the Handbook registers in `docs/ba/`, because the client may not proceed.
 
 ## Step 2 — Gather context
 
@@ -43,7 +46,7 @@ From the question bank:
 
 ## Step 4 — Produce the prep sheet
 
-Write `docs/ba/meeting-prep-<client>-<YYYY-MM-DD>.md`:
+Write `docs/ba/meeting-prep-<client>-<YYYY-MM-DD>.md` (for Product demo to a prospect: `docs/ba/product/<produk>-<versi>/sessions/<klien>-<tanggal>/meeting-prep.md`):
 
 ```markdown
 # Meeting Prep: (client), (session type)
@@ -89,6 +92,7 @@ When the user returns with notes or a transcript:
 4. Draft the Minutes of Meeting. It must be final within 24 hours (Rule P2-01) and confirmed by participants (Rule P2-02).
 5. For tenders: list which answers appear in the Berita Acara Pemberian Penjelasan or addendum; oral answers are not binding. Unclear answers go to the risk register with their price impact.
 6. Suggest new questions that proved important but are missing from the question bank, so the user can add them.
+7. For Product demo to a prospect: write everything into `docs/ba/product/<produk>-<versi>/sessions/<klien>-<tanggal>/debrief.md` instead of the registers above: pain points, the client's own assumptions, and the status of every row of `assumptions-to-confirm.md` as `dikonfirmasi`, `dibantah`, or `belum`. Copy the demo or FGD notes into the same folder. Next step: `fit-gap`.
 
 ## Handoff
 
@@ -98,6 +102,7 @@ When the user returns with notes or a transcript:
 | Vendor switch | `reverse-engineering`, then `ba-planning` |
 | Tender | proposal work; after award, `ba-planning` |
 | Comparing fix vs rebuild | `impact-analysis` |
+| Product demo to a prospect | `demo-terpandu-fgd` for the session itself, then `fit-gap` |
 
 ## Writing conventions (enforced in all output)
 

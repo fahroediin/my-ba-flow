@@ -111,3 +111,31 @@ def test_ba_start_routes_both_models():
 def test_ba_start_resumes_from_existing_docs():
     _, body = read_skill('ba-start')
     assert 'docs/ba/product/' in body and 'next step' in body and 'do not restart' in body.lower()
+
+
+def test_discovery_has_product_demo_session():
+    _, body = read_skill('discovery-meeting-prep')
+    for s in ('Product demo to a prospect', 'product-brief.md', 'assumptions-to-confirm.md',
+              'sessions/<klien>-<tanggal>/', 'meeting-prep.md', 'debrief.md', 'Module E'):
+        assert s in body, s
+    bank = (REPO / 'discovery-meeting-prep/references/question-bank.md').read_text(encoding='utf-8')
+    assert '## Bagian E: Demo produk ke calon klien' in bank and '| E-01 |' in bank
+
+
+def test_reverse_engineering_accepts_product_input():
+    head, body = read_skill('reverse-engineering')
+    assert '## Input from product based' in body
+    section = body.split('## Input from product based')[1].split('\n## ')[0]
+    for s in ('High', 'Medium', 'Low', 'dibantah', 'fit-gap', 'gap-analysis.md'):
+        assert s in section, s
+    assert 'document what this app already does' not in head['description']
+
+
+def test_product_discovery_does_not_claim_existing_apps():
+    head, _ = read_skill('product-discovery')
+    assert 'zip' not in head['description'].lower() and 'existing app' not in head['description'].lower()
+
+
+def test_wireframe_spec_points_to_demo_guide():
+    _, body = read_skill('wireframe-spec')
+    assert 'demo-terpandu-fgd' in body.split('## Handoff')[1]

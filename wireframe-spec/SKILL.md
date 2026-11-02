@@ -127,6 +127,7 @@ When the user is satisfied, point them at:
 - `data-dictionary` to formalize the data entities referenced in the field specs
 - `ba-handoff` to compile everything for engineering
 - The designer (human) to turn these specs into visual wireframes and mockups
+- `demo-terpandu-fgd` to walk the client through the mockup or prototype and capture feedback before `ba-grooming`
 
 ## Writing conventions (enforced in all output)
 

@@ -274,6 +274,29 @@ Pertanyaan dan jawaban bersifat resmi, terlihat oleh peserta lain, dan yang meng
 
 ---
 
+## Bagian E: Demo produk ke calon klien
+
+Dipakai di jalur product based: aplikasi sudah jadi, lalu diperagakan ke calon klien. Risiko terbesar: klien menilai dari tampilan, bukan dari kecocokan proses, dan aturan bisnis produk yang masih asumsi terdengar seperti janji. Modul ini memaksa demo kembali ke proses klien dan mengubah setiap asumsi produk (dari `assumptions-to-confirm.md`) menjadi pertanyaan.
+
+| ID | Pertanyaan | Prio | Yang dicari |
+| --- | --- | --- | --- |
+| E-01 | Proses mana di tempat Bapak/Ibu yang paling mirip dengan alur yang barusan diperagakan, dan di langkah mana mulai berbeda? | P1 | Titik beda pertama antara proses klien dan produk; sumber gap terbesar |
+| E-02 | Saat ini proses itu dicatat di mana (buku, Excel, WhatsApp, sistem lain), dan siapa yang mencatat? | P1 | As-Is dan data yang perlu dipindahkan |
+| E-03 | Peran mana di aplikasi ini yang ada orangnya di tempat Bapak/Ibu, dan peran mana yang tidak ada atau dirangkap? | P1 | Kecocokan struktur peran; peran rangkap mengubah hak akses |
+| E-04 | (Untuk setiap asumsi produk) Di aplikasi ini (aturan). Apakah di tempat Bapak/Ibu memang begitu? Kalau tidak, bagaimana seharusnya? | P1 | Status asumsi: dikonfirmasi, dibantah, atau belum |
+| E-05 | Bagian mana yang tadi diperagakan tetapi tidak akan dipakai sama sekali? | P1 | Fitur Tidak dibutuhkan; menyederhanakan pelatihan dan penawaran |
+| E-06 | Apa yang belum terlihat di demo tetapi wajib ada sebelum aplikasi bisa dipakai sehari-hari? | P1 | Gap yang menentukan keputusan |
+| E-07 | Laporan apa yang diminta pimpinan setiap minggu atau bulan, dan apakah ada di yang tadi diperagakan? | P1 | Kebutuhan laporan; sering menjadi alasan membeli |
+| E-08 | Perangkat apa yang dipakai di lapangan, dan bagaimana koneksi internetnya? | P2 | Kebutuhan HP, offline, dan tampilan mobile |
+| E-09 | Siapa yang akan memutuskan lanjut atau tidak, dan apa yang perlu ia lihat untuk memutuskan? | P1 | Pengambil keputusan dan bahan keputusan |
+| E-10 | Kalau mulai dipakai bulan depan, bagian mana yang dipakai lebih dulu dan oleh siapa? | P2 | Kandidat pilot dan urutan penerapan |
+
+**Red flags khusus:** klien berharap produk dipakai apa adanya padahal prosesnya jauh berbeda; klien memutuskan dari tampilan, bukan alur; pertanyaan aturan dijawab "nanti diatur saja" tanpa nama penanggung jawab.
+
+**Bawa pulang:** `debrief.md` di folder sesi produk berisi pain point, status setiap asumsi produk, fitur yang tidak dibutuhkan, dan gap yang wajib ada. Langkah berikutnya: `fit-gap`.
+
+---
+
 ## Teknik menggali
 
 | Situasi | Teknik | Contoh kalimat |

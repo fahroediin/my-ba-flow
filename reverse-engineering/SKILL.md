@@ -1,6 +1,6 @@
 ---
 name: reverse-engineering
-description: Recover requirements from an existing, running system that lacks documentation — reconstruct the As-Is model, business rules, and data dictionary from source code, database, UI, logs, and SMEs, each tagged with a confidence level. Use when the user must modernize, replace, or enhance a legacy system and says "there's no documentation", "reverse engineer this system", "recover the requirements", "document what this app already does", or "we don't know how the old system works". Read-only activity; never changes the target system.
+description: Recover requirements from an existing, running system that lacks documentation — reconstruct the As-Is model, business rules, and data dictionary from source code, database, UI, logs, and SMEs, each tagged with a confidence level. Use when the user must modernize, replace, or enhance a legacy system and says "there's no documentation", "reverse engineer this system", "recover the requirements", "document the legacy system before we modernize it", or "we don't know how the old system works". Read-only activity; never changes the target system.
 ---
 
 # Reverse Engineering and Requirements Recovery
@@ -85,6 +85,24 @@ Tag every recovered item:
 
 - **Rule RV-07 (Bab 4A):** respect intellectual property and licensing; ensure RE does not violate third-party software license agreements.
 - **Rule RV-08 (Bab 4A):** store all RE deliverables in the BA Knowledge Base and integrate them into the RTM if they will be reused.
+
+## Input from product based
+
+When `fit-gap` hands over a client project that started from a finished product, run this skill in full (RE Scope Statement approved by the BA Lead, Rule RV-01, through sign-off): from this point the BA Handbook applies. Only the starting material differs. Read `docs/ba/product-input/` in the project folder:
+
+- The five `product-onboarding` files (`product-brief.md`, `feature-inventory.md`, `business-rules-found.md`, `assumptions-to-confirm.md`, `demo-traps.md`) are Phase 1 to 3 material: asset inventory, extracted features, and extracted rules with evidence.
+- The client sessions (`debrief.md`, demo or FGD notes) count as SME/user confirmation.
+
+Map the product based labels to the Confidence Level Framework:
+
+| Product based label | Confidence Level |
+| --- | --- |
+| `Terbukti` in the app and confirmed by the client (`dikonfirmasi`) | High (two sources) |
+| One source only: `Terbukti` in the app, or an `Asumsi` the client confirmed | Medium |
+| `Asumsi` not yet confirmed (`belum`) | Low |
+| `Asumsi` the client rejected (`dibantah`) | Not baseline; record it as a gap |
+
+`fit-gap-<klien>.md` feeds the Gap Report `docs/ba/gap-analysis.md` (Phase 5). It is the client-facing summary; the Gap Report remains the formal Handbook deliverable.
 
 ## Output
 
