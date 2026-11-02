@@ -1,9 +1,14 @@
+import shutil
+import subprocess
+
 import pytest
 
 from skill_checks import REPO, missing_refs, prose_violations, read_skill
 
 # New skill name -> trigger phrases its description must contain.
-NEW_SKILLS = {}
+NEW_SKILLS = {
+    'demo-terpandu-fgd': ['panduan demo', 'FGD', 'prototype'],
+}
 
 
 def test_prose_violations_flags_dash_and_emoji_outside_code():
@@ -31,3 +36,16 @@ def test_prose_rules(name):
     assert prose_violations(body) == []
     for ref in sorted((REPO / name / 'references').glob('*.md')):
         assert prose_violations(ref.read_text(encoding='utf-8')) == [], ref.name
+
+
+def test_demo_skill_covers_both_models():
+    _, body = read_skill('demo-terpandu-fgd')
+    for s in ('product based', 'project based', 'docs/ba/product/', '/sessions/', 'docs/ba/demo-sessions/', 'Figma'):
+        assert s in body, s
+
+
+def test_demo_assets_parse_with_node():
+    if not shutil.which('node'):
+        pytest.skip('node not installed')
+    for f in ('assets/demo-proxy.mjs', 'assets/presenter-panel.js', 'scripts/build-script.mjs', 'scripts/import-questions.mjs'):
+        assert subprocess.run(['node', '--check', str(REPO / 'demo-terpandu-fgd' / f)]).returncode == 0, f

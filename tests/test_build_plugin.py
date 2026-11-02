@@ -3,7 +3,8 @@ import zipfile
 
 import build_plugin as B
 
-SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'discovery-meeting-prep',
+SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'demo-terpandu-fgd',
+          'discovery-meeting-prep',
           'grill-with-docs',
           'impact-analysis', 'process-mapping', 'product-discovery', 'requirement-elicitation', 'reverse-engineering',
           'solution-evaluation', 'stakeholder-interview', 'stop-slop', 'us-ac-writer', 'wireframe-spec']
