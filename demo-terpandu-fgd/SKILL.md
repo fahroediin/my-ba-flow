@@ -29,7 +29,7 @@ Tulis pilihan ke konfigurasi sebagai `"format": "demo"` atau `"format": "fgd"` (
 
 ## Dipakai di dua model
 
-Skill ini bagian dari plugin my-ba-flow dan dipakai di kedua model kerja BA (lihat skill `ba-start`).
+Skill ini bagian dari plugin my-ba-flow dan dipakai di kedua model kerja BA, product based dan project based (lihat skill `ba-start`).
 
 | | Product based | Project based |
 |---|---|---|
