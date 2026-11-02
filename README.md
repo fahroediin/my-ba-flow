@@ -10,6 +10,22 @@ from business objective to delivered solution.
 All BA artifacts live in `docs/ba/`. The handbook is the single source of truth; where
 a skill and the handbook disagree, the handbook wins.
 
+## Two work models
+
+`ba-start` asks which model applies, shows the route, and picks up where the BA left off.
+
+| | Project based | Product based |
+| --- | --- | --- |
+| Starting point | A client need; no application yet | A finished application (built by the CEO or by the BA), handed over as a zip or rar of source code |
+| First BA work | Elicit needs, then mockup, Figma or prototype | Understand the product, then demo it to a prospective client |
+| Documents | BA Handbook from the start | Light format until the client proceeds |
+| Meeting point | Documented client needs | `fit-gap`: client needs against the product |
+| Afterwards | The Handbook pipeline below | A separate project folder per client, then the same Handbook pipeline |
+
+Product based route: `product-onboarding` (extract, run, product brief with rules labelled Terbukti or Asumsi), `discovery-meeting-prep` (session type "Product demo to a prospect"), `demo-terpandu-fgd` (guided demo or FGD), `fit-gap`, then `ba-planning` and `reverse-engineering` in the new project folder.
+
+`demo-terpandu-fgd` serves both models: it demos the finished product, or the team's prototype in project based work.
+
 ## Pipeline mapped to the BA Handbook 8-phase lifecycle (Bab 4)
 
 | Phase (Bab 4) | Skill | Produces |
@@ -40,6 +56,10 @@ a skill and the handbook disagree, the handbook wins.
 - `reverse-engineering` — when starting from an existing, undocumented system (Bab 4A):
   recovers the As-Is, business rules, and data dictionary (with confidence levels),
   then feeds the normal pipeline.
+
+- `ba-start` (entry point) asks product based or project based and routes the work.
+- `product-onboarding` (product based) turns a zip or rar of a finished app into a light product brief.
+- `fit-gap` (product based) compares the client's needs with the product after the demo and opens the client project.
 
 ### How the stages connect
 
@@ -73,6 +93,7 @@ General-purpose helpers usable at any stage:
 
 - `grill-with-docs` — stress-test a plan against the project's domain language and docs before finalizing.
 - `stop-slop` — remove AI writing patterns from prose.
+- `demo-terpandu-fgd` — guided demo (Panduan Demo) or FGD (Panduan FGD FIF format) panel over a locally running app or prototype, with notes and a printable rundown; used in both work models.
 
 One skill per job: `grill-me`, `handoff`, and `caveman` were dropped in 1.3.0 because
 `grill-with-docs`, the app's own session handoff, and plain writing rules already cover
