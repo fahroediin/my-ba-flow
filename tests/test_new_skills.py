@@ -8,6 +8,7 @@ from skill_checks import REPO, missing_refs, prose_violations, read_skill
 # New skill name -> trigger phrases its description must contain.
 NEW_SKILLS = {
     'demo-terpandu-fgd': ['panduan demo', 'FGD', 'prototype'],
+    'product-onboarding': ['zip', 'rar', 'product based', 'aplikasi'],
 }
 
 
@@ -49,3 +50,31 @@ def test_demo_assets_parse_with_node():
         pytest.skip('node not installed')
     for f in ('assets/demo-proxy.mjs', 'assets/presenter-panel.js', 'scripts/build-script.mjs', 'scripts/import-questions.mjs'):
         assert subprocess.run(['node', '--check', str(REPO / 'demo-terpandu-fgd' / f)]).returncode == 0, f
+
+
+def test_product_onboarding_outputs_and_labels():
+    _, body = read_skill('product-onboarding')
+    for s in ('product-brief.md', 'feature-inventory.md', 'business-rules-found.md',
+              'assumptions-to-confirm.md', 'demo-traps.md', 'docs/ba/product/', 'Terbukti', 'Asumsi',
+              'tar -xf', '7z x', 'references/output-templates.md'):
+        assert s in body, s
+
+
+def test_product_onboarding_handles_extract_failure():
+    _, body = read_skill('product-onboarding')
+    assert 'password' in body.lower() and 'extract it themselves' in body
+
+
+def test_product_onboarding_handles_app_not_running():
+    _, body = read_skill('product-onboarding')
+    assert 'Tidak dijalankan:' in body
+
+
+def test_product_onboarding_versions_do_not_overwrite():
+    _, body = read_skill('product-onboarding')
+    assert 'never overwrite' in body and 'what changed' in body
+
+
+def test_product_onboarding_is_not_bab_4a():
+    _, body = read_skill('product-onboarding')
+    assert 'RE Scope Statement' in body and 'reverse-engineering' in body
