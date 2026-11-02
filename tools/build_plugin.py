@@ -7,7 +7,7 @@ import zipfile
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-SKILLS = ['ba-grooming', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'demo-terpandu-fgd',
+SKILLS = ['ba-grooming', 'ba-start', 'ba-handoff', 'ba-planning', 'change-request', 'data-dictionary', 'demo-terpandu-fgd',
           'discovery-meeting-prep', 'fit-gap',
           'grill-with-docs',
           'impact-analysis', 'process-mapping', 'product-discovery', 'product-onboarding', 'requirement-elicitation', 'reverse-engineering',

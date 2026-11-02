@@ -7,6 +7,7 @@ from skill_checks import REPO, missing_refs, prose_violations, read_skill
 
 # New skill name -> trigger phrases its description must contain.
 NEW_SKILLS = {
+    'ba-start': ['mulai', 'product based', 'project based', 'zip'],
     'demo-terpandu-fgd': ['panduan demo', 'FGD', 'prototype'],
     'product-onboarding': ['zip', 'rar', 'product based', 'aplikasi'],
     'fit-gap': ['fit-gap', 'calon klien', 'product based'],
@@ -97,3 +98,16 @@ def test_fit_gap_requires_session_evidence():
 def test_fit_gap_is_product_based_only():
     _, body = read_skill('fit-gap')
     assert 'project based' in body and 'ba-grooming' in body
+
+
+def test_ba_start_routes_both_models():
+    _, body = read_skill('ba-start')
+    for s in ('AskUserQuestion', 'Pak Tan', 'product-onboarding', 'discovery-meeting-prep',
+              'demo-terpandu-fgd', 'fit-gap', 'ba-planning', 'wireframe-spec', 'ba-grooming'):
+        assert s in body, s
+    assert 'does not write documents' in body
+
+
+def test_ba_start_resumes_from_existing_docs():
+    _, body = read_skill('ba-start')
+    assert 'docs/ba/product/' in body and 'next step' in body and 'do not restart' in body.lower()
