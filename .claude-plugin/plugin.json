@@ -1,6 +1,6 @@
 {
   "name": "my-ba-flow",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Business Analyst pipeline aligned to the internal BA Handbook v2.1 (https://ba.learning.my.id). Two work models: project based (a client need, from project kickoff to solution evaluation across the 8-phase BA lifecycle) and product based (a finished app handed over as zip or rar: product onboarding, guided demo or FGD for prospective clients, fit-gap, then entry into a Handbook project).",
   "homepage": "https://ba.learning.my.id",
   "author": {
