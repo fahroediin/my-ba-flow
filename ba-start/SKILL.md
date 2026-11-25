@@ -17,7 +17,8 @@ Look at the working folder first. Files that exist already tell the model (anyth
 | `docs/ba/product/<produk>-<versi>/product-brief.md` | Product understood | `discovery-meeting-prep` (Product demo to a prospect) |
 | `.../sessions/<klien>-<tanggal>/meeting-prep.md` without `debrief.md` | Meeting prepared | Run the meeting, demo with `demo-terpandu-fgd`, then the debrief |
 | `.../sessions/<klien>-<tanggal>/debrief.md` | Client met | `fit-gap` |
-| `.../fit-gap-<klien>.md` | Fit-gap done | If the client proceeds: project entry in `fit-gap` Step 5 |
+| `.../fit-gap-<klien>.md` without its client in `docs/ba/product/product-feedback-<produk>.md` | Fit-gap done | Product feedback in `fit-gap` Step 5 |
+| `.../fit-gap-<klien>.md` and its client in the product feedback file | Feedback recorded | If the client proceeds: project entry in `fit-gap` Step 6 |
 | `docs/ba/product-input/` or `docs/ba/ba-work-plan.md` | Project started | Continue the Handbook pipeline from the latest existing deliverable |
 
 When a newer product version arrives while an older version folder exists, the next step is `product-onboarding` for the new version.
@@ -37,13 +38,16 @@ For product based, also ask who built it: Pak Tan, the BA, or someone else. If t
 
 Show only the route for the chosen model, mark the current step, and name the next skill.
 
-**Product based** (light format until the client proceeds):
+**Product based** (light format until the client proceeds, revenue-first lens throughout):
 
-1. `product-onboarding`: extract the zip or rar, run the app, write the product brief.
-2. `discovery-meeting-prep`: session type "Product demo to a prospect".
-3. `demo-terpandu-fgd`: guided demo or FGD of the product.
-4. `fit-gap`: client needs against the product.
-5. Client proceeds: separate project folder, then the BA Handbook pipeline: `ba-planning` (Rule P1-01), `reverse-engineering`, `requirement-elicitation`, and onwards.
+1. `product-onboarding`: extract the zip or rar, run the app, write the product brief with its commercial value section.
+2. `discovery-meeting-prep`: session type "Product demo to a prospect", ending with a deal qualification summary in the debrief.
+3. `demo-terpandu-fgd`: guided demo or FGD of the product, opening with the flow that answers the client's most costly problem.
+4. `fit-gap`: client needs against the product, with deal impact and gap nature per row.
+5. `fit-gap` Step 5: record the client's gaps in the product's shared feedback file (`docs/ba/product/product-feedback-<produk>.md`), whether or not the client proceeds.
+6. Client proceeds: separate project folder, then the BA Handbook pipeline: `ba-planning` (Rule P1-01), `reverse-engineering`, `requirement-elicitation`, and onwards.
+
+When showing the product route, add one line: in product based work the BA asks at every step whether the work brings the product closer to a sale it can repeat with little custom work. The BA supplies commercial evidence to BD; the BA never sets or promises price, discount, or timeline.
 
 **Project based** (BA Handbook from the start):
 

@@ -22,7 +22,7 @@ Ask the user (or infer from what they shared, then confirm):
 | Tender aanwijzing | KAK/TOR/RKS exists, formal Q&A before bid submission | Module D first, then Core A as a gap filter on the KAK |
 | Product demo to a prospect (product based) | A finished product, already described by `product-onboarding`, is shown to a prospective client | Core A + Module E |
 
-For **Product demo to a prospect**, the required context is `docs/ba/product/<produk>-<versi>/product-brief.md` and `assumptions-to-confirm.md`. Turn every assumption into a must-ask question (Module E covers the pattern). This session type stays in the light format of the product based path: its prep sheet and debrief go to the product's session folder, not to the Handbook registers in `docs/ba/`, because the client may not proceed.
+For **Product demo to a prospect**, the required context is `docs/ba/product/<produk>-<versi>/product-brief.md` and `assumptions-to-confirm.md`. Turn every assumption into a must-ask question (Module E covers the pattern). This session type is revenue-first: besides fit, it must find out whether the deal is worth pursuing. Always keep E-09, E-11, E-12 and E-13 in the must-ask list, and use the "Nilai komersial" section of the brief to word E-11 in the client's terms. This session type stays in the light format of the product based path: its prep sheet and debrief go to the product's session folder, not to the Handbook registers in `docs/ba/`, because the client may not proceed.
 
 ## Step 2 — Gather context
 
@@ -92,7 +92,28 @@ When the user returns with notes or a transcript:
 4. Draft the Minutes of Meeting. It must be final within 24 hours (Rule P2-01) and confirmed by participants (Rule P2-02).
 5. For tenders: list which answers appear in the Berita Acara Pemberian Penjelasan or addendum; oral answers are not binding. Unclear answers go to the risk register with their price impact.
 6. Suggest new questions that proved important but are missing from the question bank, so the user can add them.
-7. For Product demo to a prospect: write everything into `docs/ba/product/<produk>-<versi>/sessions/<klien>-<tanggal>/debrief.md` instead of the registers above: pain points, the client's own assumptions, and the status of every row of `assumptions-to-confirm.md` as `dikonfirmasi`, `dibantah`, or `belum`. Copy the demo or FGD notes into the same folder. Next step: `fit-gap`.
+7. For Product demo to a prospect: write everything into `docs/ba/product/<produk>-<versi>/sessions/<klien>-<tanggal>/debrief.md` instead of the registers above: pain points, the client's own assumptions, and the status of every row of `assumptions-to-confirm.md` as `dikonfirmasi`, `dibantah`, or `belum`. Copy the demo or FGD notes into the same folder. Close the debrief with the deal qualification summary below. Next step: `fit-gap`.
+
+### Deal qualification summary (Product demo to a prospect)
+
+Add this section at the end of `debrief.md`. Fill each row from what the client said, with its source; write `Belum diketahui` rather than guessing.
+
+```markdown
+## Ringkasan kualifikasi
+
+| Aspek | Temuan | Sumber | Kekuatan |
+| --- | --- | --- | --- |
+| Anggaran | (sudah dialokasikan / sedang diajukan / belum ada / belum diketahui) | E-12 | Kuat / Sedang / Lemah |
+| Pengambil keputusan | (peran, sudah hadir atau belum, yang perlu ia lihat) | E-09 | |
+| Masalah bernilai uang | (masalah dan angka dari klien, atau "tanpa angka") | E-11, A-02 | |
+| Jalur dan waktu pengadaan | (pembelian langsung / tender / pilot dulu; kapan) | E-13 | |
+
+**Kesimpulan:** Layak dikejar / Perlu digarap BD / Belum layak  
+**Alasan:** (satu kalimat)  
+**Untuk BD:** (yang perlu ditindaklanjuti BD, tanpa harga atau diskon)
+```
+
+Rules: Layak dikejar needs at least Anggaran and Pengambil keputusan rated Kuat or Sedang. Any Lemah on those two means Perlu digarap BD at best. No money problem at all means Belum layak unless the client names one in a later session. The summary informs BD; it never quotes price, discount, or timeline.
 
 ## Handoff
 

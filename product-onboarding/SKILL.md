@@ -52,7 +52,19 @@ The labels describe what the app does, nothing more:
 
 Whether a rule fits how real users work is a separate question, answered only by the client. That answer is the client status (`dikonfirmasi`, `dibantah`, `belum`), recorded per rule in the debrief. A `Terbukti` rule can still be `dibantah` by a client.
 
-## Step 5: Compare versions
+## Step 5: Describe the commercial value (revenue-first)
+
+The product based path is revenue-first: the product earns money when the same product sells to many clients with little custom work. Before any demo, write down why a client would pay for it. Fill the "Nilai komersial" section of `product-brief.md`:
+
+- **Pembeli**: the role that holds the budget and signs (often not the daily user), next to the main users.
+- **Masalah bernilai uang**: per main flow, what it saves (time, staff, errors, penalties), what it raises (sales, collection, capacity), or what risk it removes. Use numbers from the code or sample data only as illustrations, never as client figures.
+- **Segmen sasaran**: the industries or company types most likely to buy, and why.
+- **Momen nilai**: the one or two demo moments where the money value is most visible. `demo-terpandu-fgd` opens with these.
+- **Kesiapan dijual**: whether the product can be sold as is, needs configuration per client, or still needs development before a first sale.
+
+Label every line `Asumsi` until BD, the product owner, or Pak Tan confirms it; confirmed lines become `Dikonfirmasi (oleh, tanggal)`. Never write price, discount, license model terms, or timeline here: those belong to BD. If the BA cannot name a buyer or a money problem for the product, say so in the summary to the user; it is the most important finding of the onboarding.
+
+## Step 6: Compare versions
 
 If an earlier version of the same product already has a folder under `docs/ba/product/`, create a new folder for the new version and never overwrite the old one (its fit-gap and sessions belong to that version). Add a section to the new `product-brief.md` summarising what changed: new or removed modules, changed rules, changed roles, demo steps that no longer match.
 
@@ -62,13 +74,13 @@ Write to `docs/ba/product/<produk>-<versi>/`, following `references/output-templ
 
 | File | Content |
 | --- | --- |
-| `product-brief.md` | Purpose, users, problem solved, modules, roles and their work, business flow, how to run locally, readiness (siap demo / siap pilot / belum), what changed since the previous version |
+| `product-brief.md` | Purpose, users, problem solved, modules, roles and their work, business flow, commercial value (buyer, money problem, target segment, value moments, sales readiness), how to run locally, readiness (siap demo / siap pilot / siap dijual / belum), what changed since the previous version |
 | `feature-inventory.md` | Features per module/menu, roles that use them, evidence (screen, route, action) |
 | `business-rules-found.md` | Every rule found, labelled `Terbukti` or `Asumsi`, with source and evidence |
 | `assumptions-to-confirm.md` | Every rule that needs a client status: all `Asumsi` rules, `Terbukti` rules that shape the client's daily process (approvals, payment, stock, status changes), and features with no clear need behind them |
 | `demo-traps.md` | What to avoid or explain during a demo, with the workaround for each |
 
-Show the user a short summary: what the product does in three sentences, the five most important `Asumsi` items, and the traps that would hurt a demo most.
+Show the user a short summary: what the product does in three sentences, who would pay for it and for which money problem, the five most important `Asumsi` items, and the traps that would hurt a demo most.
 
 ## Handoff
 

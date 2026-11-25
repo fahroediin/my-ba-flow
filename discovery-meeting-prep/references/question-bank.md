@@ -290,10 +290,13 @@ Dipakai di jalur product based: aplikasi sudah jadi, lalu diperagakan ke calon k
 | E-08 | Perangkat apa yang dipakai di lapangan, dan bagaimana koneksi internetnya? | P2 | Kebutuhan HP, offline, dan tampilan mobile |
 | E-09 | Siapa yang akan memutuskan lanjut atau tidak, dan apa yang perlu ia lihat untuk memutuskan? | P1 | Pengambil keputusan dan bahan keputusan |
 | E-10 | Kalau mulai dipakai bulan depan, bagian mana yang dipakai lebih dulu dan oleh siapa? | P2 | Kandidat pilot dan urutan penerapan |
+| E-11 | Masalah yang tadi terlihat di demo, berapa biayanya sekarang: jam kerja, jumlah orang, kesalahan, denda, atau penjualan yang hilang per bulan? | P1 | Nilai uang dari masalah; dasar kualifikasi deal (revenue-first) |
+| E-12 | Untuk perbaikan proses ini, apakah anggarannya sudah ada, sedang diajukan, atau belum? Masuk periode anggaran kapan? | P1 | Kesiapan anggaran; jangan menyebut harga |
+| E-13 | Kalau Bapak/Ibu memutuskan lanjut, bagaimana jalur pengadaannya: pembelian langsung, tender, atau pilot dulu? Kira-kira kapan? | P1 | Jalur dan waktu pengadaan; menentukan tindak lanjut BD |
 
-**Red flags khusus:** klien berharap produk dipakai apa adanya padahal prosesnya jauh berbeda; klien memutuskan dari tampilan, bukan alur; pertanyaan aturan dijawab "nanti diatur saja" tanpa nama penanggung jawab.
+**Red flags khusus:** klien berharap produk dipakai apa adanya padahal prosesnya jauh berbeda; klien memutuskan dari tampilan, bukan alur; pertanyaan aturan dijawab "nanti diatur saja" tanpa nama penanggung jawab; klien tertarik tetapi tidak bisa menyebut masalah yang bernilai uang; semua gap penentu keputusan bersifat kustom khusus klien ini.
 
-**Bawa pulang:** `debrief.md` di folder sesi produk berisi pain point, status setiap asumsi produk, fitur yang tidak dibutuhkan, dan gap yang wajib ada. Langkah berikutnya: `fit-gap`.
+**Bawa pulang:** `debrief.md` di folder sesi produk berisi pain point, status setiap asumsi produk, fitur yang tidak dibutuhkan, gap yang wajib ada, dan ringkasan kualifikasi (anggaran, pengambil keputusan, masalah bernilai uang, jalur pengadaan). Langkah berikutnya: `fit-gap`.
 
 ---
 

@@ -22,7 +22,9 @@ a skill and the handbook disagree, the handbook wins.
 | Meeting point | Documented client needs | `fit-gap`: client needs against the product |
 | Afterwards | The Handbook pipeline below | A separate project folder per client, then the same Handbook pipeline |
 
-Product based route: `product-onboarding` (extract, run, product brief with rules labelled Terbukti or Asumsi), `discovery-meeting-prep` (session type "Product demo to a prospect"), `demo-terpandu-fgd` (guided demo or FGD), `fit-gap`, then `ba-planning` and `reverse-engineering` in the new project folder.
+Product based route: `product-onboarding` (extract, run, product brief with rules labelled Terbukti or Asumsi and a commercial value section), `discovery-meeting-prep` (session type "Product demo to a prospect", debrief ends with a deal qualification summary), `demo-terpandu-fgd` (guided demo or FGD that opens with the value moment), `fit-gap` (deal impact and gap nature per row, then the shared product feedback file of recurring gaps), then `ba-planning` and `reverse-engineering` in the new project folder.
+
+The product based path is **revenue-first**: the product earns money when the same product sells to many clients with little custom work. At each step the BA asks who pays, for which money problem, whether the deal is worth pursuing, and which gaps would sell again as product features. The BA hands this evidence to BD and never sets or promises price, discount, or timeline.
 
 `demo-terpandu-fgd` serves both models: it demos the finished product, or the team's prototype in project based work.
 

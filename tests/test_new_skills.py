@@ -200,3 +200,29 @@ def test_ba_start_detects_position_before_asking():
     _, body = read_skill('ba-start')
     assert body.index('Find where the work stands') < body.index('Ask the model')
     assert 'one line per' in body and 'only when nothing' in body
+
+
+def test_product_path_is_revenue_first():
+    _, onboarding = read_skill('product-onboarding')
+    for s in ('revenue-first', 'Nilai komersial', 'Pembeli', 'Momen nilai', 'siap dijual'):
+        assert s in onboarding, s
+    _, discovery = read_skill('discovery-meeting-prep')
+    for s in ('Ringkasan kualifikasi', 'Layak dikejar', 'Perlu digarap BD', 'Belum layak', 'E-11', 'E-12', 'E-13'):
+        assert s in discovery, s
+    bank = (REPO / 'discovery-meeting-prep' / 'references' / 'question-bank.md').read_text(encoding='utf-8')
+    for s in ('| E-11 |', '| E-12 |', '| E-13 |'):
+        assert s in bank, s
+    _, demo = read_skill('demo-terpandu-fgd')
+    assert 'revenue-first' in demo and '"Nilai: "' in demo
+    _, fit = read_skill('fit-gap')
+    for s in ('Dampak ke deal', 'Sifat gap', 'Penentu deal', 'Kustom klien', 'Fitur produk',
+              'product-feedback-<produk>.md', 'Kandidat roadmap', 'Untuk BD'):
+        assert s in fit, s
+    _, start = read_skill('ba-start')
+    assert 'revenue-first' in start and 'product-feedback-<produk>.md' in start
+
+
+def test_product_path_never_states_price():
+    for name in ('product-onboarding', 'discovery-meeting-prep', 'demo-terpandu-fgd', 'fit-gap', 'ba-start'):
+        _, body = read_skill(name)
+        assert re.search(r'[Nn]ever (state|set|quote|write|promise)[^.]*price|[Jj]angan menyebut harga', body), name

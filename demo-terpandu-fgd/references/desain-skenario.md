@@ -4,6 +4,7 @@
 
 Fokusnya memperlihatkan produk berjalan. Layar hanya berisi navigasi langkah dan tombol Catatan, jadi audiens melihat aplikasi, bukan teks panduan.
 - Urutan langkah mengikuti alur produk: Pembukaan (0) → pengenalan (termasuk multi-tenant bila ada) → peran → alur bisnis dari hulu ke hilir, satu peran satu tindakan → kontrol/laporan → penutup.
+- Untuk demo produk ke calon klien (product based, revenue-first), urutannya: Pembukaan (0) → **momen nilai** (alur yang menjawab masalah termahal klien, diambil dari "Nilai komersial" di `product-brief.md`) → pengenalan dan peran → alur pendukung → laporan untuk pimpinan → penutup dengan pertanyaan kualifikasi (E-09, E-11, E-12, E-13). Poin pertama `say` setiap langkah diawali "Nilai: ".
 - `title` pendek dan jelas, karena hanya judul yang tampil di bilah.
 - `goal`, `show`, `say`, `do` tetap ditulis lengkap: semuanya masuk naskah cetak yang menjadi pegangan pembawa.
 - Pertanyaan opsional. Bila pengguna memberi daftar, tempatkan kode di `q` agar muncul di naskah; jangan menulis ulang kalimat pengguna kecuali salah ketik yang jelas.

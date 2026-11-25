@@ -28,11 +28,23 @@ Disusun dengan bantuan AI, ditinjau oleh BA: (nama)
 ## Alur bisnis hulu ke hilir
 1. (langkah, peran, hasil)
 
+## Nilai komersial
+| Aspek | Isi | Status |
+| --- | --- | --- |
+| Pembeli (pemegang anggaran) | (peran, bukan nama orang) | Asumsi / Dikonfirmasi (oleh, tanggal) |
+| Pengguna utama | (peran) | |
+| Masalah bernilai uang | (per alur utama: yang dihemat, yang naik, atau risiko yang hilang) | |
+| Segmen sasaran | (industri atau jenis perusahaan, dan alasannya) | |
+| Momen nilai di demo | (satu atau dua layar/alur tempat nilai uang paling terlihat) | |
+| Kesiapan dijual | (dijual apa adanya / perlu konfigurasi per klien / perlu pengembangan sebelum penjualan pertama) | |
+
+Tidak memuat harga, diskon, model lisensi, atau timeline. Itu wewenang BD.
+
 ## Cara menjalankan lokal
 (perintah, akun uji, catatan; atau "Tidak dijalankan: (alasan)")
 
 ## Kesiapan
-(siap demo / siap pilot / belum), dengan alasan singkat
+(siap demo / siap pilot / siap dijual / belum), dengan alasan singkat
 
 ## Perubahan dari versi sebelumnya
 (hanya bila ada versi sebelumnya)

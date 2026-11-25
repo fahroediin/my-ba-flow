@@ -79,6 +79,8 @@ Ikuti `references/desain-skenario.md` bagian "Data contoh": nama lokal yang real
 ### 5. Tulis rundown
 Ikuti `references/desain-skenario.md`. Rundown berwaktu, nomor mulai **0 (Pembukaan)** sampai penutup. Untuk tiap langkah di `steps.json`: `title`, `min`, `who`, `goal`, `show`, `q` (kode pertanyaan dari daftar), `spot`, lalu untuk pembawa `say` dan `do` (label tombol persis). Format Demo: urutkan langkah mengikuti alur produk dan tempatkan pertanyaan pengguna di langkah yang topiknya cocok. Format FGD: susun langkah di sekitar keputusan yang ingin didapat. Targetkan 8–16 langkah.
 
+**Product based memakai lensa revenue-first.** Ambil "Momen nilai di demo" dan "Masalah bernilai uang" dari bagian Nilai komersial di `product-brief.md`. Langkah 1 (setelah Pembukaan) langsung memperlihatkan momen nilai yang paling dekat dengan masalah termahal calon klien; pengenalan peran dan tenant menyusul setelahnya. Di setiap langkah, poin pertama `say` diawali "Nilai: " lalu satu kalimat nilai bisnis yang diperlihatkan langkah itu (waktu dihemat, kesalahan dicegah, penjualan atau penagihan naik), dalam istilah klien. Langkah tanpa nilai yang bisa disebut dipertimbangkan untuk dihapus. Langkah penutup memuat pertanyaan E-09, E-11, E-12, E-13 dari prep sheet bila belum terjawab. Jangan menyebut harga, diskon, atau timeline di layar maupun di naskah.
+
 ### 6. Pasang panduan
 Salin `assets/demo-proxy.mjs` dan `assets/presenter-panel.js` ke folder demo proyek (mis. `demo/`) bersama `demo.config.json` (dengan `format`), `steps.json`, `questions.json`, dan `seed.mjs` bila perlu. Jalankan aplikasinya, lalu:
 ```bash
