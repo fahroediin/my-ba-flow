@@ -15,7 +15,7 @@ These three outputs populate **FSD Section 8 (User Interface Specification)** in
 
 Read existing artifacts: `docs/ba/brd.md`, `docs/ba/process-map-to-be.md`, `docs/ba/stakeholder-map.md`, and `docs/business/user-story.md` if they exist. The TO-BE process map is the primary driver: each human-facing step in the process implies a screen or a screen state.
 
-## Phase 1 — Screen Inventory
+## Phase 1: Screen Inventory
 
 Interview the user to walk through the application screen by screen. For each screen:
 
@@ -38,7 +38,7 @@ Produce a screen inventory table:
 
 Group screens by functional area or user journey.
 
-## Phase 2 — Navigation Flow
+## Phase 2: Navigation Flow
 
 Produce a Mermaid diagram showing how screens connect:
 
@@ -55,14 +55,14 @@ Use swimlanes (`subgraph`) to group screens by functional area. Annotate edges w
 
 For role-based navigation differences, produce separate flows or annotate which paths are available to which personas.
 
-## Phase 3 — Field-Level Specifications
+## Phase 3: Field-Level Specifications
 
 For each screen, produce a detailed field specification. This is the core deliverable: the field spec is the contract between BA, designer, and developer.
 
 ### Per-screen spec structure
 
 ```markdown
-## SCR-XX — (Screen Name)
+## SCR-XX: (Screen Name)
 
 **Purpose:** (what the user does here)  
 **Persona:** (roles)  

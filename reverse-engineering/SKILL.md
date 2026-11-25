@@ -1,6 +1,6 @@
 ---
 name: reverse-engineering
-description: Recover requirements from an existing, running system that lacks documentation — reconstruct the As-Is model, business rules, and data dictionary from source code, database, UI, logs, and SMEs, each tagged with a confidence level. Use when the user must modernize, replace, or enhance a legacy system and says "there's no documentation", "reverse engineer this system", "recover the requirements", "document the legacy system before we modernize it", or "we don't know how the old system works". Read-only activity; never changes the target system.
+description: Recover requirements from an existing, running system that lacks documentation. Reconstructs the As-Is model, business rules, and data dictionary from source code, database, UI, logs, and SMEs, each tagged with a confidence level. Use when the user must modernize, replace, or enhance a legacy system and says "there's no documentation", "reverse engineer this system", "recover the requirements", "document the legacy system before we modernize it", or "we don't know how the old system works". Read-only activity; never changes the target system.
 ---
 
 # Reverse Engineering and Requirements Recovery
@@ -15,11 +15,11 @@ Triggers: modernization or replacement of a legacy system, missing or outdated d
 
 > **Rule RV-04 (Bab 4A):** reverse engineering is strictly **read-only**. Never change the production system or database during RE. Use a staging or sandbox environment for any testing.
 
-## The RE Lifecycle (Bab 4A.4 — 6 phases)
+## The RE Lifecycle (Bab 4A.4: 6 phases)
 
 Walk the user through each phase, one at a time.
 
-### Phase 1 — Discovery and Scoping
+### Phase 1: Discovery and Scoping
 - Identify remaining stakeholders and SMEs.
 - Inventory existing artifacts (documents, source code, database, logs) into an **Asset Inventory**.
 - Define the **RE Scope Statement** (target system, target modules, expected deliverables, timeline) and get BA Lead approval.
@@ -28,7 +28,7 @@ Walk the user through each phase, one at a time.
 
 **Entry criteria:** target system identified; access to system/source code granted; at least one SME/user available.
 
-### Phase 2 — System Analysis and Extraction
+### Phase 2: System Analysis and Extraction
 Apply the core BABOK techniques (Bab 4A.5) to pull information from each source:
 
 | Technique | Applied to | Output |
@@ -43,20 +43,20 @@ Apply the core BABOK techniques (Bab 4A.5) to pull information from each source:
 
 Supporting techniques: code-review collaboration, screen-recording analysis, ERD generation from the database, API doc generation (Swagger/Postman), log analysis.
 
-### Phase 3 — Documentation and Modeling
+### Phase 3: Documentation and Modeling
 Transform raw findings into formal models: As-Is process model, business rules catalog, and a data dictionary. Tag every extracted item with a **Confidence Level** (Phase below).
 
-### Phase 4 — Validation and Verification
+### Phase 4: Validation and Verification
 Cross-validate each finding against multiple sources.
 
 > **Rule RV-03 (Bab 4A):** a business rule may be marked "verified" only after cross-validation from at least **2 different sources** (source code, database, SME/user confirmation, system logs).
 
-### Phase 5 — Baseline and Sign-off
+### Phase 5: Baseline and Sign-off
 Get formal sign-off from the Process Owner, and produce a **Gap Report** (what the system does vs what the business now needs).
 
 > **Rule RV-06 (Bab 4A):** RE results must be baselined and formally signed off by the Process Owner before they drive a modernization/enhancement project.
 
-### Phase 6 — Maintenance and Updates
+### Phase 6: Maintenance and Updates
 Keep the recovered documentation current as the system changes.
 
 ## Confidence Level Framework (Bab 4A.7)

@@ -1,18 +1,12 @@
-# my-ba-flow — Business Analyst Pipeline (Claude Code Skills)
+# my-ba-flow: Business Analyst Pipeline (Claude Code Skills)
 
-Personal skill library that operationalizes the internal **BA Handbook v2.1** (https://ba.learning.my.id, login required) as a
-Claude Code / LLM skill pipeline. It takes a business need from project kickoff all the
-way to solution evaluation, producing the planning, requirements, process, impact,
-validation, and handoff artifacts the handbook mandates. Each stage reads the artifacts
-produced by the previous stage and writes the next, so every decision stays traceable
-from business objective to delivered solution.
+A personal skill library that turns the internal **BA Handbook v2.1** (https://ba.learning.my.id, login required) into a Claude Code skill pipeline. You start with a business need at project kickoff and finish with a solution evaluation. Along the way the skills write the planning, requirements, process, impact, validation and handoff artifacts the handbook requires. Each skill reads what the previous one wrote, so you can trace any decision from business objective to delivered solution.
 
-All BA artifacts live in `docs/ba/`. The handbook is the single source of truth; where
-a skill and the handbook disagree, the handbook wins.
+All BA artifacts live in `docs/ba/`. When a skill and the handbook disagree, follow the handbook.
 
 ## Two work models
 
-`ba-start` asks which model applies, shows the route, and picks up where the BA left off.
+`ba-start` asks which model applies, shows the route and picks up where you left off.
 
 | | Project based | Product based |
 | --- | --- | --- |
@@ -22,11 +16,17 @@ a skill and the handbook disagree, the handbook wins.
 | Meeting point | Documented client needs | `fit-gap`: client needs against the product |
 | Afterwards | The Handbook pipeline below | A separate project folder per client, then the same Handbook pipeline |
 
-Product based route: `product-onboarding` (extract, run, product brief with rules labelled Terbukti or Asumsi and a commercial value section), `discovery-meeting-prep` (session type "Product demo to a prospect", debrief ends with a deal qualification summary), `demo-terpandu-fgd` (guided demo or FGD that opens with the value moment), `fit-gap` (deal impact and gap nature per row, then the shared product feedback file of recurring gaps), then `ba-planning` and `reverse-engineering` in the new project folder.
+The product based route runs in this order:
 
-The product based path is **revenue-first**: the product earns money when the same product sells to many clients with little custom work. At each step the BA asks who pays, for which money problem, whether the deal is worth pursuing, and which gaps would sell again as product features. The BA hands this evidence to BD and never sets or promises price, discount, or timeline.
+1. `product-onboarding`: extract and run the app, then write a product brief with rules labelled Terbukti or Asumsi and a commercial value section.
+2. `discovery-meeting-prep`: session type "Product demo to a prospect". The debrief ends with a deal qualification summary.
+3. `demo-terpandu-fgd`: a guided demo or FGD that opens with the value moment.
+4. `fit-gap`: deal impact and gap nature per need, then an update to the product's shared file of recurring gaps.
+5. `ba-planning` and `reverse-engineering` in a new project folder, once the client proceeds.
 
-`demo-terpandu-fgd` serves both models: it demos the finished product, or the team's prototype in project based work.
+The product based path is **revenue-first**. The product earns money when the same product sells to many clients with little custom work. At each step you ask who pays, for which money problem, whether the deal is worth pursuing, and which gaps would sell again as product features. You hand that evidence to BD. You do not set or promise price, discount or timeline.
+
+`demo-terpandu-fgd` serves both models. In product based work it demos the finished product; in project based work it demos the team's prototype.
 
 ## Pipeline mapped to the BA Handbook 8-phase lifecycle (Bab 4)
 
@@ -45,66 +45,48 @@ The product based path is **revenue-first**: the product earns money when the sa
 | 7. Support & Change Mgmt | `change-request` | `change-requests/CR-XX.md` (T-18), `cr-register.md` |
 | 8. Solution Evaluation | `solution-evaluation` | `uat-signoff.md`, `solution-evaluation.md`, `lesson-learned.md` |
 
-### Optional on-ramps
+### Entry points and on-ramps
 
-- `discovery-meeting-prep` — before the first client contact: classifies the session
-  (new system from scratch, vendor switch or troubled project, tender aanwijzing), builds
-  a prioritized, client-specific question list and red-flag watchlist from the team
-  question bank, then runs the post-meeting debrief that feeds `ba-planning` and
-  `stakeholder-interview`.
-- `meeting-live-assist` (during the meeting): processes the live transcript in chunks of
-  5 to 10 minutes, returns at most three questions to ask now plus Open Questions and
-  Assumptions rows in the MoM template (T-04) format, and replays saved transcripts.
-- `product-discovery` — when starting from a raw idea with no requirements: interviews the
-  user and emits a first-draft user-story / AC / sprint table that feeds
-  `stakeholder-interview` and `requirement-elicitation`.
-- `reverse-engineering` — when starting from an existing, undocumented system (Bab 4A):
-  recovers the As-Is, business rules, and data dictionary (with confidence levels),
-  then feeds the normal pipeline.
-
-- `ba-start` (entry point) asks product based or project based and routes the work.
-- `product-onboarding` (product based) turns a zip or rar of a finished app into a light product brief.
-- `fit-gap` (product based) compares the client's needs with the product after the demo and opens the client project.
+- `ba-start`: asks product based or project based and routes the work.
+- `discovery-meeting-prep`: use it before the first client contact. It classifies the session (new system from scratch, vendor switch or troubled project, tender aanwijzing, product demo), builds a prioritized question list and red-flag watchlist from the team question bank, and runs the debrief that feeds `ba-planning` and `stakeholder-interview`.
+- `meeting-live-assist`: use it during the meeting. Paste the transcript in 5 to 10 minute chunks; you get at most three questions to ask now, plus Open Questions and Assumptions rows in the MoM template (T-04) format. It also replays saved transcripts.
+- `product-discovery`: use it when you have a raw idea and no requirements. It interviews you and writes a first-draft user story, AC and sprint table for `stakeholder-interview` and `requirement-elicitation`.
+- `reverse-engineering`: use it on an existing system with no documentation (Bab 4A). It recovers the As-Is, business rules and data dictionary with confidence levels, then feeds the normal pipeline.
+- `product-onboarding` (product based): turns a zip or rar of a finished app into a light product brief.
+- `fit-gap` (product based): compares the client's needs with the product after the demo and opens the client project.
 
 ### How the stages connect
 
-1. `ba-planning` is the mandatory first gate — the BA Work Plan must exist before any
-   elicitation (Rule P1-01).
-2. `stakeholder-interview` maps the landscape and surfaces pain points.
+1. `ba-planning` is the first gate. The BA Work Plan must exist before any elicitation (Rule P1-01).
+2. `stakeholder-interview` maps who matters and records their pain points.
 3. `requirement-elicitation` turns those into a baselined BRD and business rules.
-4. `process-mapping` and `impact-analysis` run in parallel off the BRD: process maps show
-   what changes; impact analysis quantifies risk (ISO 31000, 4x4) and logs issues.
-5. `wireframe-spec` and `data-dictionary` run in parallel: the UI contract and the data
-   contract.
-6. `ba-grooming` validates stories from the business perspective and runs the Phase-4
-   validation gate (peer review, Rule P4-01).
-7. `ba-handoff` compiles everything with a Bab 5.4.2 traceability matrix, Approval Authority,
-   and the DoR gate.
-8. After baseline, `change-request` governs every change (Rule P7-01); after go-live,
-   `solution-evaluation` runs UAT sign-off and Lesson Learned (Rule P8-01).
+4. `process-mapping` and `impact-analysis` both start from the BRD. Process maps show what changes; impact analysis scores risk (ISO 31000, 4x4) and logs issues.
+5. `wireframe-spec` and `data-dictionary` run side by side: one sets the UI contract, the other the data contract.
+6. `ba-grooming` reviews stories from the business side and runs the Phase-4 validation gate (peer review, Rule P4-01).
+7. `ba-handoff` packages everything with a Bab 5.4.2 traceability matrix, Approval Authority and the DoR gate.
+8. After baseline, every change goes through `change-request` (Rule P7-01). After go-live, `solution-evaluation` runs UAT sign-off and Lesson Learned (Rule P8-01).
 
-## Governance baked into every deliverable-producing skill
+## Rules every deliverable follows
 
-- Outputs target the handbook's official templates and formats in Bab 8 (T-04, T-07, T-09,
-  T-18, T-App-BA/UIUX/Eng, T-PRD, T-FSD, T-RES) rather than ad-hoc formats (Rule DL-01, P3-03).
-- Every deliverable carries a Revision History and version control (Rule DL-02).
-- AI-drafted content must be reviewed by the responsible BA before it becomes an official
-  deliverable, and AI assistance is logged in the Revision History (Rules AI-01, AI-03).
-- Traceability is bidirectional: Business Need to Requirement to Test Case (Rule R-04).
+- Outputs use the handbook's official templates in Bab 8 (T-04, T-07, T-09, T-18, T-App-BA/UIUX/Eng, T-PRD, T-FSD, T-RES), not ad-hoc formats (Rules DL-01, P3-03).
+- Each deliverable carries a Revision History and version control (Rule DL-02).
+- The responsible BA reviews AI-drafted content before it becomes an official deliverable, and logs the AI assistance in the Revision History (Rules AI-01, AI-03).
+- Traceability runs both ways: Business Need to Requirement to Test Case (Rule R-04).
 
 ## Supporting skills
 
-General-purpose helpers usable at any stage:
+You can use these at any stage:
 
-- `grill-with-docs` — stress-test a plan against the project's domain language and docs before finalizing.
-- `stop-slop` — remove AI writing patterns from prose.
-- `demo-terpandu-fgd` — guided demo (Panduan Demo) or FGD (Panduan FGD FIF format) panel over a locally running app or prototype, with notes and a printable rundown; used in both work models.
+- `grill-with-docs`: test a plan against the project's domain language and docs before you finalize it.
+- `stop-slop`: strip AI writing patterns from prose.
+- `demo-terpandu-fgd`: a guided demo (Panduan Demo) or FGD (Panduan FGD FIF format) panel over a locally running app or prototype, with notes and a printable rundown.
 
-One skill per job: `grill-me`, `handoff`, and `caveman` were dropped in 1.3.0 because
-`grill-with-docs`, the app's own session handoff, and plain writing rules already cover
-them. `skill-creator/` and `write-a-skill/` stay in the repo as authoring notes only and
-are not shipped in the plugin.
+Each skill does one job. Version 1.3.0 dropped `grill-me`, `handoff` and `caveman`: `grill-with-docs`, the app's own session handoff and plain writing rules cover them. `skill-creator/` and `write-a-skill/` stay in the repo as authoring notes; the plugin does not ship them.
 
 ## Keeping handbook copies in sync
 
-`us-ac-writer/references/` holds exact copies of the handbook's `Template/SysFunc_US_AC_Guide.md` and `Appendix_D_Panduan_Praktik_US_AC.md`. After the handbook changes, run `python tools/sync_handbook.py --update` (set `BA_HANDBOOK_DIR` if the handbook is not at the default path), run `python -m pytest tests -q`, then rebuild the plugin with `python tools/build_plugin.py` and reinstall it.
+`us-ac-writer/references/` holds exact copies of the handbook's `Template/SysFunc_US_AC_Guide.md` and `Appendix_D_Panduan_Praktik_US_AC.md`. After the handbook changes:
+
+1. Run `python tools/sync_handbook.py --update`. Set `BA_HANDBOOK_DIR` if the handbook is not at the default path.
+2. Run `python -m pytest tests -q`.
+3. Rebuild the plugin with `python tools/build_plugin.py` and reinstall it.

@@ -1,6 +1,6 @@
 ---
 name: change-request
-description: Handle a change to a baselined requirement through the formal Change Request process, producing a Change Request Form with a mandatory impact analysis and routing it for approval, and logging the change. Use after requirements are approved/baselined and something must change — the user says "we need to change a requirement", "raise a change request", "the scope changed", "CR", "the stakeholder wants something different now", or a new need appears after sign-off. Any post-baseline change must go through this (Rules P7-01, DL-04).
+description: Handle a change to a baselined requirement through the formal Change Request process, producing a Change Request Form with a mandatory impact analysis and routing it for approval, and logging the change. Use after requirements are approved/baselined and something must change: the user says "we need to change a requirement", "raise a change request", "the scope changed", "CR", "the stakeholder wants something different now", or a new need appears after sign-off. Any post-baseline change must go through this (Rules P7-01, DL-04).
 ---
 
 # Change Request
@@ -17,7 +17,7 @@ Use this only for changes to something already **approved / baselined**. If requ
 
 Read the affected artifacts under `docs/ba/`: `brd.md`, `business-rules.md`, `traceability-matrix.md`, and any user stories. Identify exactly which baselined requirements (BR / US / AC IDs) the change touches. Confirm the current baseline version.
 
-## Artifact 1: Change Request Form (`change-requests/CR-XX.md`) — template T-18
+## Artifact 1: Change Request Form (`change-requests/CR-XX.md`): template T-18
 
 ```markdown
 # Change Request Form
@@ -44,7 +44,7 @@ Read the affected artifacts under `docs/ba/`: `brd.md`, `business-rules.md`, `tr
 | --- | --- | --- |
 | BR-XX / US-XX / AC-XX | (as baselined) | (after change) |
 
-## 4. Impact Analysis (mandatory — Rule P7-02)
+## 4. Impact Analysis (mandatory: Rule P7-02)
 ### Scope Impact
 ### Timeline Impact
 ### Cost Impact

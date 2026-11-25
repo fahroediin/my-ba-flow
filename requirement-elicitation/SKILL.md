@@ -13,7 +13,7 @@ Aligned with BA Handbook Bab 4.4 (Analysis & Documentation), Bab 5 (Requirements
 
 Classify every requirement by its **level** in the BABOK v3 §2.3 classification schema (Bab 5.2.1) and tag it accordingly: **Business Requirement** (organizational, lives in the BRD), **Stakeholder Requirement** (from a stakeholder's perspective), **Solution Requirement** (Functional and Non-Functional, the spec of what is built), and **Transition Requirement** (data migration and cutover needs). Tagging the level lets the RTM trace Business Need to Solution Requirement to Test Case bidirectionally (Bab 5.4).
 
-## Phase 1 — Elicit
+## Phase 1: Elicit
 
 Read existing artifacts first: if `docs/ba/stakeholder-map.md`, `docs/ba/interview-notes.md`, or `docs/ba/pain-points-register.md` exist, load them and use them as context. Do not re-ask questions that are already answered.
 
@@ -55,7 +55,7 @@ When eliciting or writing acceptance criteria for any requirement:
 - **Rule RE-04**: each AC must include **boundary values** and **edge cases** so QA can derive test cases using Equivalence Partitioning and Boundary Value Analysis without further clarification.
 - **MRTM rule (Bab 14)**: if a feature's logic involves more than **3 input variables or decision branches**, do not write AC as narrative prose. Instead, reference a tabular MRTM (Master Requirement and Test Matrix). Write the AC as: *"Refer to MRTM rows TRM_XXX_001 through TRM_XXX_NNN for comprehensive logic combinations."*
 
-## Phase 2 — Synthesize
+## Phase 2: Synthesize
 
 ### Artifact 1: Business Requirements Document (`brd.md`)
 

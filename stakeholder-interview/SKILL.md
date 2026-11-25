@@ -11,7 +11,7 @@ Aligned with BA Handbook Bab 4.2 (Planning & Scoping), Bab 6 (Stakeholder Manage
 
 Two phases: **interview to map the landscape, then synthesize the artifacts.**
 
-## Phase 1 — Interview
+## Phase 1: Interview
 
 Elicit the stakeholder landscape one question at a time, recommend an answer for each, and do not move on until the user confirms. The goal is to identify every person or group who influences, is affected by, or has authority over the project.
 
@@ -42,7 +42,7 @@ Surface contradictions and coverage gaps as you go. When the picture is complete
 
 Note on timing (Rule P2-01): if this skill is used during a live interview session, the resulting artifacts serve as the structured meeting minutes and must be finalized within 24 hours of the session. Per Rule P2-02, those minutes must then be confirmed (signed or approved) by the session participants as verification of accuracy before they are treated as final.
 
-## Phase 2 — Synthesize the artifacts
+## Phase 2: Synthesize the artifacts
 
 Turn the interview into structured documents the rest of the BA pipeline can consume.
 

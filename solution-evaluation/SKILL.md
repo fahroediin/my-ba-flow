@@ -1,11 +1,11 @@
 ---
 name: solution-evaluation
-description: Evaluate a delivered solution against the business need and close the project out — support UAT sign-off, analyze user feedback, report expected-vs-actual gaps, and run the Lesson Learned session. Use after go-live or at the end of a release, when the user says "did the solution meet the need", "run UAT sign-off", "gather feedback", "post-mortem", "lesson learned", "retrospective on the project", or "wrap up the project". This is the final phase of the BA lifecycle (Phase 8).
+description: Evaluate a delivered solution against the business need and close the project out: support UAT sign-off, analyze user feedback, report expected-vs-actual gaps, and run the Lesson Learned session. Use after go-live or at the end of a release, when the user says "did the solution meet the need", "run UAT sign-off", "gather feedback", "post-mortem", "lesson learned", "retrospective on the project", or "wrap up the project". This is the final phase of the BA lifecycle (Phase 8).
 ---
 
 # Solution Evaluation
 
-The last step of the BA pipeline (Phase 8). After the solution is built and released, the BA evaluates whether it actually met the business need, supports the UAT sign-off, and captures what was learned so the next project benefits.
+The last step of the BA pipeline (Phase 8). After the solution is built and released, the BA evaluates whether it met the business need, supports the UAT sign-off, and captures what was learned so the next project benefits.
 
 Aligned with BA Handbook Bab 4.9 (Phase 8: Solution Evaluation), Bab 4.11.7 (UAT) and 4.11.8 (Lesson Learned), and Rules P8-01, P8-02, RM-05.
 
@@ -98,7 +98,7 @@ Run within **2 weeks of go-live** (Rule P8-01) and store the result in the BA Kn
 | --- | --- | --- |
 
 ## Knowledge Base
-(link where this is stored — Rule P8-02)
+(link to where the BA stored it, Rule P8-02)
 ```
 
 ## Output

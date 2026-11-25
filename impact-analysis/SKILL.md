@@ -11,7 +11,7 @@ Aligned with BA Handbook Bab 7 (Mitigasi Risiko & Manajemen Isu, ISO 31000:2018)
 
 Two phases: **assess impact across dimensions, then synthesize the risk, issue, and readiness picture.**
 
-## Phase 1 — Impact Assessment
+## Phase 1: Impact Assessment
 
 Read existing artifacts: `docs/ba/brd.md`, `docs/ba/gap-analysis.md`, `docs/ba/stakeholder-map.md`, `docs/ba/process-map-as-is.md`, `docs/ba/process-map-to-be.md` if they exist. Use the gap analysis as the primary driver: each gap implies an impact.
 
@@ -60,7 +60,7 @@ For each data entity that is created, modified, migrated, or retired:
 - What validation will confirm the migration succeeded?
 - Are there regulatory or compliance implications (data retention, privacy, audit trail)?
 
-## Phase 2 — Synthesize
+## Phase 2: Synthesize
 
 ### Artifact 1: Impact Assessment Matrix (`impact-assessment.md`)
 
@@ -97,7 +97,7 @@ Use the BA Handbook risk model exactly (Bab 7.5). Probability and Impact are sco
 **Probability scale (Bab 7.5.1):** 1 = Sangat Rendah, 2 = Rendah, 3 = Sedang, 4 = Tinggi.
 **Impact scale:** 1 = Rendah, 2 = Sedang, 3 = Tinggi, 4 = Kritis.
 
-**Risk category (Bab 7.4.1) — use these codes:**
+**Risk category (Bab 7.4.1), use these codes:**
 - **RQ** Requirement Quality (ambiguous/incomplete/untestable requirements, gold plating, missing NFR)
 - **SK** Stakeholder (key stakeholder unavailable, disengaged, changing, political conflict)
 - **PR** Process (scope creep without CR, bypassed approval, inconsistent docs, knowledge loss)
@@ -122,13 +122,13 @@ Use the BA Handbook risk model exactly (Bab 7.5). Probability and Impact are sco
 | Level | Score | Response | Escalation |
 | --- | --- | --- | --- |
 | Low | 1-3 | Accept & Monitor | None |
-| Medium | 4-6 | Mitigate — build an action plan | BA Lead |
-| High | 8-9 | Mitigate aggressively — prioritize action | Head of BA + PM |
-| Critical | 12-16 | Immediate action — escalate to Steering Committee | Steering Committee |
+| Medium | 4-6 | Mitigate: build an action plan | BA Lead |
+| High | 8-9 | Mitigate first: put the action plan at the top of the list | Head of BA + PM |
+| Critical | 12-16 | Act now: escalate to the Steering Committee | Steering Committee |
 
 Rules to enforce while producing and maintaining this register:
 - **Rule RM-01:** the Risk Register must be updated at least every 2 weeks (or every sprint in Agile).
-- **Rule RM-02:** Critical and High risks must be escalated without delay — no Critical risk may sit without an action plan for more than 24 hours, no High risk for more than 3 working days.
+- **Rule RM-02:** Critical and High risks go to escalation the same day. No Critical risk may sit without an action plan for more than 24 hours, no High risk for more than 3 working days.
 - **Rule RM-03:** every unconfirmed assumption older than 2 weeks becomes an active risk; pull open items from `docs/ba/assumptions-log.md` and add them here.
 - **Rule RM-04:** a risk review is mandatory in every sprint retrospective or status meeting.
 

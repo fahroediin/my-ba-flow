@@ -53,3 +53,10 @@ def test_change_request_approver_is_pm_and_sponsor():
         text = (B.REPO / skill / 'SKILL.md').read_text(encoding='utf-8')
         assert 'PM + Sponsor (Change Control Board)' in text, skill
         assert 'Change Advisory Board' not in text, skill
+
+
+def test_no_em_dashes_in_shipped_docs():
+    # stop-slop: no em dashes. Handbook copies and stop-slop's own bad-pattern examples are exempt.
+    exempt = ('us-ac-writer/references/', 'stop-slop/references/')
+    hits = [k for k, t in shipped_texts().items() if not k.startswith(exempt) and '—' in t]
+    assert hits == []

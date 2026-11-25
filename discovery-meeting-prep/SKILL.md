@@ -11,7 +11,7 @@ Aligned with BA Handbook Bab 4.2 (Planning & Scoping), Bab 6 (Stakeholder Manage
 
 The full question bank lives in [references/question-bank.md](references/question-bank.md). Read it before Step 3. Questions are in Bahasa Indonesia because sessions run in Bahasa Indonesia.
 
-## Step 1 — Classify the session
+## Step 1: Classify the session
 
 Ask the user (or infer from what they shared, then confirm):
 
@@ -24,7 +24,7 @@ Ask the user (or infer from what they shared, then confirm):
 
 For **Product demo to a prospect**, the required context is `docs/ba/product/<produk>-<versi>/product-brief.md` and `assumptions-to-confirm.md`. Turn every assumption into a must-ask question (Module E covers the pattern). This session type is revenue-first: besides fit, it must find out whether the deal is worth pursuing. Always keep E-09, E-11, E-12 and E-13 in the must-ask list, and use the "Nilai komersial" section of the brief to word E-11 in the client's terms. This session type stays in the light format of the product based path: its prep sheet and debrief go to the product's session folder, not to the Handbook registers in `docs/ba/`, because the client may not proceed.
 
-## Step 2 — Gather context
+## Step 2: Gather context
 
 Collect what is known, one topic at a time. Do not re-ask what the user already gave.
 
@@ -34,7 +34,7 @@ Collect what is known, one topic at a time. Do not re-ask what the user already 
 - Anything already shared: emails, decks, screenshots, KAK/TOR, previous vendor documents.
 - For tenders: read the full KAK/TOR/RKS. Break it into numbered requirements and label each Clear, Ambiguous, Not measurable, Contradictory, or Unrealistic for the timeline.
 
-## Step 3 — Select and tailor questions
+## Step 3: Select and tailor questions
 
 From the question bank:
 
@@ -44,7 +44,7 @@ From the question bank:
 4. Cap the must-ask list at 15 questions for a 60-minute session (scale proportionally). Move the rest to "if time allows".
 5. For tenders, order questions by cost impact and remove any question that reveals our solution strategy to competitors.
 
-## Step 4 — Produce the prep sheet
+## Step 4: Produce the prep sheet
 
 Write `docs/ba/meeting-prep-<client>-<YYYY-MM-DD>.md` (for Product demo to a prospect: `docs/ba/product/<produk>-<versi>/sessions/<klien>-<tanggal>/meeting-prep.md`):
 
@@ -71,7 +71,7 @@ Write `docs/ba/meeting-prep-<client>-<YYYY-MM-DD>.md` (for Product demo to a pro
 | --- | --- | --- | --- |
 
 ## Red flags to watch
-(3–5 most likely for this client, from the question bank)
+(3-5 most likely for this client, from the question bank)
 
 ## Capture during the meeting
 - Pain points (with frequency and impact numbers)
@@ -82,7 +82,7 @@ Write `docs/ba/meeting-prep-<client>-<YYYY-MM-DD>.md` (for Product demo to a pro
 
 Remind the user: one BA asks, one BA captures; ask permission to record at the start. To surface gaps while the meeting runs, use `meeting-live-assist` with this prep sheet loaded.
 
-## Step 5 — Debrief (after the meeting)
+## Step 5: Debrief (after the meeting)
 
 When the user returns with notes or a transcript:
 

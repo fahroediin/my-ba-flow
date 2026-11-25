@@ -29,7 +29,7 @@ For each user story, evaluate against these criteria:
 #### Persona Accuracy
 
 - Is the persona a real user role from the stakeholder map, or a made-up abstraction?
-- Does this persona actually perform this action in the real workflow (reference `docs/ba/process-map-to-be.md` if available)?
+- Does this persona perform this action in the real workflow (reference `docs/ba/process-map-to-be.md` if available)?
 - Are there other personas who need the same capability but with different permissions or views?
 - Is the persona too broad ("as a user") or too narrow ("as a senior regional manager in Jakarta")?
 
@@ -73,15 +73,15 @@ Beyond the business-value lens, run each requirement and story through the two P
 
 #### Verification Checklist (BABOK Task 7.2, ISO/IEC/IEEE 29148 §5.2)
 
-- [ ] **Necessary** — removing it leaves a need unmet
-- [ ] **Singular** — one capability or constraint per requirement
-- [ ] **Unambiguous** — exactly one interpretation
-- [ ] **Complete** — no missing information
-- [ ] **Consistent** — no conflict with another requirement
-- [ ] **Feasible** — implementable within the known constraints
-- [ ] **Verifiable** — can be proven met, for example by a test
-- [ ] **Traceable** — traces to a business need and to a test case
-- [ ] **Prioritized** — carries a MoSCoW priority
+- [ ] **Necessary**: removing it leaves a need unmet
+- [ ] **Singular**: one capability or constraint per requirement
+- [ ] **Unambiguous**: exactly one interpretation
+- [ ] **Complete**: no missing information
+- [ ] **Consistent**: no conflict with another requirement
+- [ ] **Feasible**: implementable within the known constraints
+- [ ] **Verifiable**: can be proven met, for example by a test
+- [ ] **Traceable**: traces to a business need and to a test case
+- [ ] **Prioritized**: carries a MoSCoW priority
 
 #### Validation Checklist (BABOK Task 7.3)
 
@@ -101,7 +101,7 @@ Record the validation and peer-review results as a **Review Checklist** (Bab 9.4
 Group questions under these headings. For each question, note why it matters to the business:
 
 - **Value and priority**: Is this worth building now?
-- **Persona and workflow**: Does this match how the business actually works?
+- **Persona and workflow**: Does this match how the business works today?
 - **Completeness**: What is missing from the business perspective?
 - **Testability**: Can the business validate this?
 

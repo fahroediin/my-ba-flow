@@ -51,7 +51,7 @@ Array langkah. Nomor langkah dimulai dari **0** (Pembukaan), sama seperti tombol
 [
   {
     "title": "Hari kerja sales dan data",
-    "min": "18–30",
+    "min": "18-30",
     "who": "Fahrudin",
     "as": "spv",
     "url": "/manajemen",
@@ -73,15 +73,15 @@ Array langkah. Nomor langkah dimulai dari **0** (Pembukaan), sama seperti tombol
 | `goal` | Semua | Satu kalimat tujuan langkah: keputusan atau pemahaman yang ingin dicapai bersama peserta. |
 | `show` | Semua | Daftar "Tampilkan": layar/bagian yang diperlihatkan. |
 | `q` | Semua | Kode pertanyaan dari bank `questions` (ditampilkan sebagai chip kode + teks). Teks tanpa kode juga boleh. |
-| `min` | Pembawa | Rentang menit di rundown (mis. `"18–30"`). |
+| `min` | Pembawa | Rentang menit di rundown (mis. `"18-30"`). |
 | `who` | Pembawa | Nama pembawa langkah. |
 | `say` | Pembawa | Poin bicara. |
 | `do` | Pembawa | Instruksi klik dengan label tombol persis seperti di layar. |
 | `act` | `/demo` | Opsional: nama babak untuk pengelompokan di halaman `/demo`. |
-| `as` | – | `key` peran dari konfigurasi; langkah ini dibuka sebagai peran itu. |
-| `url` | – | Halaman yang dibuka saat langkah dimulai. |
-| `nav` | – | Aksi otomatis menyiapkan layar (lihat bawah). |
-| `spot` | – | Selector bagian layar yang disorot (bingkai warna aksen, sisanya diredupkan). |
+| `as` | - | `key` peran dari konfigurasi; langkah ini dibuka sebagai peran itu. |
+| `url` | - | Halaman yang dibuka saat langkah dimulai. |
+| `nav` | - | Aksi otomatis menyiapkan layar (lihat bawah). |
+| `spot` | - | Selector bagian layar yang disorot (bingkai warna aksen, sisanya diredupkan). |
 | `placeholder` | Semua | Opsional: contoh isian untuk kolom catatan `ubah` dan `berubah` (FGD) atau `catatan` (Demo). |
 
 "Pembawa" berarti hanya tampil saat sakelar **Info pembawa** dinyalakan. Sakelar ini mati secara bawaan karena layar presentasi dilihat klien.

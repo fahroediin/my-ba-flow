@@ -1,6 +1,6 @@
 ---
 name: ba-planning
-description: Produce the mandatory Phase 1 planning deliverables before any elicitation begins — a BA Work Plan, a BA Approach Document (Waterfall/Agile/Hybrid), a Communication Plan, a Scope Statement, and a Context Diagram. Use when a project or initiative is kicking off, the user says "let's start a project", "plan the BA work", "what's our approach", "scope this initiative", "who do we talk to and when", or before running stakeholder-interview. This is the first gate of the BA pipeline (Rule P1-01).
+description: Produce the mandatory Phase 1 planning deliverables before any elicitation begins: a BA Work Plan, a BA Approach Document (Waterfall/Agile/Hybrid), a Communication Plan, a Scope Statement, and a Context Diagram. Use when a project or initiative is kicking off, the user says "let's start a project", "plan the BA work", "what's our approach", "scope this initiative", "who do we talk to and when", or before running stakeholder-interview. This is the first gate of the BA pipeline (Rule P1-01).
 ---
 
 # BA Planning and Scoping
@@ -20,7 +20,7 @@ Confirm these exist before planning; if any is missing, flag it to the user:
 - [ ] High-level business objectives communicated
 - [ ] Project timeline established
 
-## Phase 1 — Interview
+## Phase 1: Interview
 
 Elicit the planning context one topic at a time, recommending an answer for each:
 
@@ -33,9 +33,9 @@ Elicit the planning context one topic at a time, recommending an answer for each
 - **Constraints and dependencies.** Budget, resource, regulatory, technology mandates, and cross-project dependencies.
 - **Communication needs.** For each stakeholder group: what information they need, format, frequency, channel, and PIC.
 
-## Phase 2 — Synthesize the artifacts
+## Phase 2: Synthesize the artifacts
 
-### Artifact 1: BA Work Plan (`ba-work-plan.md`) — free format, mandatory coverage per Rule P1-01 (Bab 4.2)
+### Artifact 1: BA Work Plan (`ba-work-plan.md`): free format, mandatory coverage per Rule P1-01 (Bab 4.2)
 
 ```markdown
 # BA Work Plan
@@ -55,7 +55,7 @@ Elicit the planning context one topic at a time, recommending an answer for each
 ### 1.2 Out of Scope
 
 ## 2. BA Approach
-(Waterfall / Agile / Hybrid, with rationale — see Artifact 2)
+(Waterfall / Agile / Hybrid, with rationale; see Artifact 2)
 
 ## 3. Deliverables and Timeline
 | Deliverable | Phase | Owner | Target Date | Template |
@@ -75,7 +75,7 @@ Elicit the planning context one topic at a time, recommending an answer for each
 ## 7. Approval
 | Role | Name | Date | Signature |
 | --- | --- | --- | --- |
-(Approved by PM + BA Lead before elicitation begins — Rule P1-01)
+(PM and BA Lead approve before elicitation begins, Rule P1-01)
 ```
 
 ### Artifact 2: BA Approach Document (`ba-approach.md`)
@@ -90,7 +90,7 @@ State the chosen delivery approach and what it implies:
 | Emphasized artifacts | (e.g. User Stories + MRTM for Agile; BRD + FSD for Waterfall) |
 | Elicitation techniques planned | (interview, workshop, observation, survey, document analysis) |
 
-### Artifact 3: Communication Plan (`communication-plan.md`) — Bab 6.4.1
+### Artifact 3: Communication Plan (`communication-plan.md`): Bab 6.4.1
 
 Follow the BA Handbook format (Bab 6.4.1):
 

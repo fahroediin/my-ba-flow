@@ -9,7 +9,7 @@ The seventh step in the BA pipeline. Establishes the single source of truth for 
 
 Two phases: **elicit the data landscape, then synthesize the dictionary and glossary.**
 
-## Phase 1 — Elicit
+## Phase 1: Elicit
 
 Read existing artifacts: `docs/ba/brd.md`, `docs/ba/field-specs/`, `docs/ba/process-map-to-be.md`, `docs/ba/business-rules.md` if they exist. The field specs are the richest source: every field on every screen references a data entity and attribute.
 
@@ -40,7 +40,7 @@ For relationships between entities:
 - **Business meaning.** Why does this relationship exist? What does it represent in the real world?
 - **Cascade behavior (business).** What happens to B when A is deleted or archived? (Business rule, not database config.)
 
-## Phase 2 — Synthesize
+## Phase 2: Synthesize
 
 ### Artifact 1: Data Dictionary (`data-dictionary.md`)
 

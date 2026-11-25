@@ -30,7 +30,7 @@ All process diagrams in this skill use Mermaid flowcharts. To maintain complianc
 
 **Minimum elements per diagram:** every process diagram must include at least: one start event, one end event, decision gateways where the process branches, and swimlanes (`subgraph`) when multiple actors are involved.
 
-## Phase 1 — AS-IS (Current State)
+## Phase 1: AS-IS (Current State)
 
 Read existing artifacts first: `docs/ba/brd.md`, `docs/ba/interview-notes.md`, `docs/ba/pain-points-register.md` if they exist.
 
@@ -76,7 +76,7 @@ For each process, capture baseline metrics where the user can provide them:
 | Handoff count | (count) | (from map) |
 ```
 
-## Phase 2 — TO-BE (Future State)
+## Phase 2: TO-BE (Future State)
 
 Design the future process based on the BRD requirements. For each AS-IS process:
 
@@ -102,7 +102,7 @@ Capture target metrics:
 | Manual steps | (current) | (target) | (delta) |
 ```
 
-## Phase 3 — Gap Analysis
+## Phase 3: Gap Analysis
 
 For each process, produce a structured gap analysis:
 
