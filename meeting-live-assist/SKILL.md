@@ -9,7 +9,7 @@ Companion for the meeting itself. `discovery-meeting-prep` prepares the question
 
 Aligned with BA Handbook Bab 6 (Stakeholder Management), the MoM template T-04 (`Template/Template_MoM.md`), and Rules P2-01, P2-02, P2-03. Golden rule applied throughout: As-Is before To-Be.
 
-Claude cannot hear the meeting. It works only on text the user pastes. Every answer must be readable in 30 seconds, because the user reads it while listening.
+The agent cannot hear the meeting. It works only on text the user pastes. Every answer must be readable in 30 seconds, because the user reads it while listening.
 
 ## Step 1: Setup (before the meeting starts)
 

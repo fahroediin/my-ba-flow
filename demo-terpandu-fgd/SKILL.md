@@ -9,7 +9,7 @@ Tujuannya: penyaji cukup menekan **Berikutnya ›** (atau nomor langkah). Setiap
 
 ## Langkah 0: tanyakan format (wajib, sebelum mengerjakan apa pun)
 
-Setiap kali skill ini dipakai, tanyakan dulu format mana yang diinginkan dengan alat tanya-pilihan (AskUserQuestion) bila tersedia, atau dengan pertanyaan langsung: **Demo**, **FGD**, atau **keduanya**. Jangan memilih sendiri; format menentukan isi panel, data yang diminta, dan naskahnya.
+Setiap kali skill ini dipakai, tanyakan dulu format mana yang diinginkan dengan alat tanya-pilihan milik agent bila tersedia (AskUserQuestion di Claude Code), atau dengan pertanyaan langsung: **Demo**, **FGD**, atau **keduanya**. Jangan memilih sendiri; format menentukan isi panel, data yang diminta, dan naskahnya.
 
 | Format | Panel di layar | Pertanyaan | Cocok untuk |
 |---|---|---|---|
@@ -29,7 +29,7 @@ Tulis pilihan ke konfigurasi sebagai `"format": "demo"` atau `"format": "fgd"` (
 
 ## Dipakai di dua model
 
-Skill ini bagian dari plugin my-ba-flow dan dipakai di kedua model kerja BA, product based dan project based (lihat skill `ba-start`).
+Skill ini bagian dari kumpulan skill my-ba-flow dan dipakai di kedua model kerja BA, product based dan project based (lihat skill `ba-start`).
 
 | | Product based | Project based |
 |---|---|---|

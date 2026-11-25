@@ -1,8 +1,31 @@
-# my-ba-flow: Business Analyst Pipeline (Claude Code Skills)
+# my-ba-flow: Business Analyst Pipeline (Agent Skills)
 
-A personal skill library that turns the internal **BA Handbook v2.1** (https://ba.learning.my.id, login required) into a Claude Code skill pipeline. You start with a business need at project kickoff and finish with a solution evaluation. Along the way the skills write the planning, requirements, process, impact, validation and handoff artifacts the handbook requires. Each skill reads what the previous one wrote, so you can trace any decision from business objective to delivered solution.
+A personal skill library that turns the internal **BA Handbook v2.1** (https://ba.learning.my.id, login required) into an agent skill pipeline. Every skill follows the open [Agent Skills](https://agentskills.io) format, so it runs in Claude Code, Codex, Antigravity, Gemini CLI, Cursor, GitHub Copilot and other agents that read `SKILL.md`. You start with a business need at project kickoff and finish with a solution evaluation. Along the way the skills write the planning, requirements, process, impact, validation and handoff artifacts the handbook requires. Each skill reads what the previous one wrote, so you can trace any decision from business objective to delivered solution.
 
 All BA artifacts live in `docs/ba/`. When a skill and the handbook disagree, follow the handbook.
+
+## Install
+
+**Claude Code and Claude apps.** Install `my-ba-flow.plugin`. Rebuild it after any change with `python tools/build_plugin.py`.
+
+**Other agents.** Copy the skills into the folder your agent reads with `tools/install_skills.py`:
+
+| Agent | Command | Installs to |
+| --- | --- | --- |
+| Codex | `python tools/install_skills.py --agent codex` | `.agents/skills/` in the current project |
+| Antigravity | `python tools/install_skills.py --agent antigravity --scope user` | `~/.gemini/config/skills/`, all workspaces |
+| Gemini CLI | `python tools/install_skills.py --agent gemini-cli` | `.agents/skills/` in the current project |
+| Cursor | `python tools/install_skills.py --agent cursor` | `.agents/skills/` in the current project |
+| GitHub Copilot / VS Code | `python tools/install_skills.py --agent copilot` | `.github/skills/` in the current project |
+| Any folder | `python tools/install_skills.py --dir <folder>` | `<folder>/<skill>/` |
+
+Add `--scope user` to install for every project on your machine, `--project <path>` to target another project, `--skill <name>` to install one skill, and `--dry-run` to see the destination first. `--list` prints every agent and its folders. The script overwrites files of skills it installs and leaves everything else in the folder alone.
+
+Notes for non-Claude agents:
+
+- Skills call each other by name (`fit-gap` hands over to `ba-planning`), so install the whole set.
+- `demo-terpandu-fgd` needs Node.js; `us-ac-writer` needs Python. Both run the same in any agent.
+- Where a skill asks a multiple-choice question, agents without such a tool ask it as plain text.
 
 ## Two work models
 
@@ -81,7 +104,7 @@ You can use these at any stage:
 - `stop-slop`: strip AI writing patterns from prose.
 - `demo-terpandu-fgd`: a guided demo (Panduan Demo) or FGD (Panduan FGD FIF format) panel over a locally running app or prototype, with notes and a printable rundown.
 
-Each skill does one job. Version 1.3.0 dropped `grill-me`, `handoff` and `caveman`: `grill-with-docs`, the app's own session handoff and plain writing rules cover them. `skill-creator/` and `write-a-skill/` stay in the repo as authoring notes; the plugin does not ship them.
+Each skill does one job. Version 1.3.0 dropped `grill-me`, `handoff` and `caveman`: `grill-with-docs`, the app's own session handoff and plain writing rules cover them. `skill-creator/` and `write-a-skill/` stay in the repo as authoring notes; neither the plugin nor `tools/install_skills.py` ships them.
 
 ## Keeping handbook copies in sync
 
@@ -89,4 +112,4 @@ Each skill does one job. Version 1.3.0 dropped `grill-me`, `handoff` and `cavema
 
 1. Run `python tools/sync_handbook.py --update`. Set `BA_HANDBOOK_DIR` if the handbook is not at the default path.
 2. Run `python -m pytest tests -q`.
-3. Rebuild the plugin with `python tools/build_plugin.py` and reinstall it.
+3. Rebuild the plugin with `python tools/build_plugin.py` and reinstall it, or rerun `tools/install_skills.py` for other agents.

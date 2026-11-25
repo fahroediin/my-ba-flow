@@ -35,7 +35,7 @@ def test_plugin_contains_us_ac_writer_files(tmp_path):
         assert name in names, name
     assert not any('__pycache__' in n or n.startswith('skills/skill-creator') for n in names)
     with zipfile.ZipFile(out) as z:
-        assert json.loads(z.read('.claude-plugin/plugin.json'))['version'] == '1.6.0'
+        assert json.loads(z.read('.claude-plugin/plugin.json'))['version'] == '1.7.0'
 
 
 def test_readme_explains_two_work_models():

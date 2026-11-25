@@ -28,7 +28,7 @@ For **Product demo to a prospect**, the required context is `docs/ba/product/<pr
 
 Collect what is known, one topic at a time. Do not re-ask what the user already gave.
 
-- Client name, industry, size. If no profile exists, suggest running `company-profiling` first.
+- Client name, industry, size. If no profile exists, suggest a company profiling session first (the `company-profiling` skill, if installed).
 - Who will attend from the client side (names, roles) and from our side.
 - Meeting duration and format (onsite, online).
 - Anything already shared: emails, decks, screenshots, KAK/TOR, previous vendor documents.

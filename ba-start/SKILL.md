@@ -25,7 +25,7 @@ When a newer product version arrives while an older version folder exists, the n
 
 ## Step 2: Ask the model
 
-Ask only when nothing was found in Step 1, or when the user starts something new. Ask with AskUserQuestion when available, otherwise as a plain question. Never pick for the user.
+Ask only when nothing was found in Step 1, or when the user starts something new. Ask with the agent's multiple-choice question tool when available (AskUserQuestion in Claude Code), otherwise as a plain question. Never pick for the user.
 
 | Model | Signals |
 | --- | --- |
